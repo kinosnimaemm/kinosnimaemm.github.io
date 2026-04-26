@@ -39,7 +39,8 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI-визуалы, motion-переходы и концептные ролики для необычной подачи.',
     processBrief: 'цель, стиль, площадка', processShoot: 'DOP, свет, движение', processEdit: 'ритм, звук, графика', processDelivery: 'финальные версии под платформы',
     contactTitle: 'Давайте снимем видео, которое выглядит дороже обычного контента.',
-    contactText: 'Ссылки на Instagram, Telegram, email и WhatsApp подключим следующим шагом. Пока можно оставить этот блок как финальный CTA.'
+    contactText: 'Напишите коротко: кто вы, что нужно снять, город, примерные даты и куда будет идти видео — Instagram, YouTube, сайт или реклама. Я отвечу и предложу понятный следующий шаг.',
+    briefOne: '1. задача', briefTwo: '2. город', briefThree: '3. дата', briefFour: '4. формат', contactTelegram: 'Написать в Telegram'
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
@@ -81,7 +82,8 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI visuals, motion transitions and concept videos for an unusual presentation.',
     processBrief: 'goal, style, location', processShoot: 'DOP, light, movement', processEdit: 'rhythm, sound, graphics', processDelivery: 'final versions for platforms',
     contactTitle: 'Let’s shoot a video that looks more expensive than ordinary content.',
-    contactText: 'Instagram, Telegram, email and WhatsApp links will be connected next. For now this block works as the final CTA.'
+    contactText: 'Write briefly: who you are, what you need to shoot, city, approximate dates and where the video will be used — Instagram, YouTube, website or ads. I will reply with a clear next step.',
+    briefOne: '1. task', briefTwo: '2. city', briefThree: '3. date', briefFour: '4. format', contactTelegram: 'Message on Telegram'
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
@@ -123,7 +125,8 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI Visuals, Motion-Transitions und Konzeptvideos für ungewöhnliche Präsentation.',
     processBrief: 'Ziel, Stil, Location', processShoot: 'DOP, Licht, Bewegung', processEdit: 'Rhythmus, Sound, Grafik', processDelivery: 'finale Versionen für Plattformen',
     contactTitle: 'Lass uns ein Video drehen, das wertiger aussieht als normaler Content.',
-    contactText: 'Instagram-, Telegram-, Email- und WhatsApp-Links verbinden wir im nächsten Schritt. Vorerst funktioniert dieser Block als finaler CTA.'
+    contactText: 'Schreib kurz: wer du bist, was gedreht werden soll, Stadt, ungefähre Daten und wo das Video genutzt wird — Instagram, YouTube, Website oder Ads. Ich antworte mit einem klaren nächsten Schritt.',
+    briefOne: '1. Aufgabe', briefTwo: '2. Stadt', briefThree: '3. Datum', briefFour: '4. Format', contactTelegram: 'Auf Telegram schreiben'
   }
 };
 

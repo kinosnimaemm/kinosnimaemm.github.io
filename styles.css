@@ -1308,3 +1308,40 @@ h2::selection { background: var(--accent); color: #130d08; }
   .ambient-stack .ambient-video:nth-child(n+2) { display: none; }
   .interlude-copy.align-right { left: clamp(1.5rem, 7vw, 7rem); right: auto; text-align: left; }
 }
+
+/* Stronger final conversion block. */
+.brief-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .55rem;
+  margin: 2rem 0 1.2rem;
+  max-width: 48rem;
+  position: relative;
+  z-index: 2;
+}
+.brief-strip span {
+  border: 1px solid rgba(241,234,223,.16);
+  padding: .8rem .75rem;
+  color: rgba(241,234,223,.78);
+  background: rgba(11,11,10,.28);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .68rem;
+  font-weight: 900;
+}
+.contact-links .contact-main {
+  background: var(--accent);
+  color: #160d08;
+  border-color: var(--accent);
+  font-weight: 900;
+}
+.contact-links a:hover {
+  border-color: rgba(255,106,42,.72);
+  transform: translateY(-2px);
+}
+.contact-links a {
+  transition: transform .24s ease, border-color .24s ease, background .24s ease;
+}
+@media (max-width: 640px) {
+  .brief-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
