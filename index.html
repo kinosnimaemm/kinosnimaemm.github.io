@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="kinosnimaemm — videography, editing, DOP, motion design and AI-driven post-production by Andrii Hevich. Freelance production across Germany." />
+    <meta name="theme-color" content="#0b0b0a" />
+    <meta property="og:title" content="kinosnimaemm — Andrii Hevich" />
+    <meta property="og:description" content="Commercial video, tattoo artists, YouTube and events across Germany." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/posters/hero-full-frame.mp4.jpg" />
+    <title>kinosnimaemm — Andrii Hevich</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="kinosnimaemm home">
+        <span class="brand-mark">kino</span><span>snimaemm</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#works" data-i18n="navWork">Работы</a>
+        <a href="#about" data-i18n="navAbout">Обо мне</a>
+        <a href="#services" data-i18n="navServices">Услуги</a>
+        <a href="#contact" data-i18n="navContact">Контакт</a>
+      </nav>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="active" type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="de">DE</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Hero">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/posters/hero-full-frame.mp4.jpg">
+          <source src="assets/video/hero-full-frame.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-shade"></div>
+        <div class="hero-frame" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">Andrii Hevich / Germany freelance production</p>
+          <h1>
+            <span data-i18n="heroTitleA">Киношная картинка</span>
+            <em data-i18n="heroTitleB">для брендов, людей и событий.</em>
+          </h1>
+          <p class="hero-copy" data-i18n="heroCopy">kinosnimaemm — продакшн Андрея Гевича: съемка, монтаж, DOP, motion design и AI-инструменты для коммерческих роликов, tattoo artists, YouTube и events по всей Германии.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#works" data-i18n="heroCtaWork">Смотреть работы</a>
+            <a class="button ghost" href="#contact" data-i18n="heroCtaContact">Обсудить проект</a>
+          </div>
+        </div>
+        <div class="hero-meta reveal delay-2">
+          <span>01</span>
+          <span>DOP / EDIT / MOTION / AI</span>
+          <span>DE</span>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Production keywords">
+        <div>
+          <span>commercial</span><span>tattoo artist</span><span>youtube</span><span>events</span><span>post-production</span><span>stuttgart urban mood</span>
+        </div>
+      </section>
+
+      <section class="section intro reveal">
+        <div class="section-kicker">Selected direction</div>
+        <p data-i18n="introText">Я делаю видео, которое выглядит как кампания бренда: резкий ритм, чистый монтаж, живой город, кожа, свет, движение и кадры, которые хочется пересмотреть.</p>
+      </section>
+
+      <section class="section works" id="works">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">Portfolio route / choose your task</p>
+            <h2 data-i18n="worksTitle">Выбери, что нужно снять</h2>
+          </div>
+          <p data-i18n="worksLead">Сайт теперь ведет заказчика проще: сначала он видит направления, потом листает вниз и сразу попадает в похожие кейсы — tattoo, barbershop, реснички, реклама, events, AI и горизонтальные истории.</p>
+        </div>
+
+        <div class="journey-grid reveal">
+          <a href="#tattoo-work"><span>01</span><strong data-i18n="journeyTattoo">Я tattoo artist / studio</strong><em data-i18n="journeyTattooText">процесс, портрет, reels, showreel</em></a>
+          <a href="#beauty-work"><span>02</span><strong data-i18n="journeyBeauty">Я beauty-мастер</strong><em data-i18n="journeyBeautyText">реснички, атмосфера, доверие</em></a>
+          <a href="#barber-work"><span>03</span><strong data-i18n="journeyBarber">У меня barbershop</strong><em data-i18n="journeyBarberText">мужской стиль, детали, команда</em></a>
+          <a href="#business-work"><span>04</span><strong data-i18n="journeyBusiness">Нужна реклама</strong><em data-i18n="journeyBusinessText">услуга, продукт, social ad</em></a>
+          <a href="#events-work"><span>05</span><strong data-i18n="journeyEvents">Нужно событие / история</strong><em data-i18n="journeyEventsText">event, horizontal, mood</em></a>
+          <a href="#ai-work"><span>06</span><strong data-i18n="journeyAi">Хочу AI / motion</strong><em data-i18n="journeyAiText">нейро-визуалы и концепты</em></a>
+        </div>
+
+        <div class="category-block reveal" id="tattoo-work">
+          <div class="category-header">
+            <span>01</span>
+            <h3 data-i18n="catTattooTitle">Tattoo artists</h3>
+            <p data-i18n="catTattooText">Контент для мастера и студии: показать кожу, руки, атмосферу, человека за работой и финальный результат так, чтобы захотелось записаться.</p>
+          </div>
+          <div class="portfolio-deck feature-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-showreel.mp4.jpg"><source src="assets/video/tattoo-showreel.mp4" type="video/mp4" /></video>
+              <div><span>Tattoo / showreel</span><strong data-i18n="workTattooShowreel">Главный mood студии</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-main.mp4.jpg"><source src="assets/video/tattoo-main.mp4" type="video/mp4" /></video>
+              <div><span>Tattoo / process</span><strong data-i18n="workTattooMain">Процесс и рука мастера</strong></div>
+            </article>
+            <article class="clip-card reveal delay-2" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-tip.mp4.jpg"><source src="assets/video/tattoo-tip.mp4" type="video/mp4" /></video>
+              <div><span>Tattoo / social hook</span><strong data-i18n="workTattooTip">Короткий reel-хук</strong></div>
+            </article>
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-c4414.mp4.jpg"><source src="assets/video/tattoo-c4414.mp4" type="video/mp4" /></video>
+              <div><span>Tattoo / close detail</span><strong data-i18n="workTattooDetail">Деталь и фактура</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-dara-dog.mp4.jpg"><source src="assets/video/tattoo-dara-dog.mp4" type="video/mp4" /></video>
+              <div><span>Tattoo / character</span><strong data-i18n="workTattooCharacter">Живой портрет</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <section class="cinema-interlude reveal" aria-label="Cinematic tattoo transition">
+          <video class="ambient-video" muted loop playsinline preload="metadata" poster="assets/posters/tattoo-horizontal.mp4.jpg">
+            <source src="assets/video/tattoo-horizontal.mp4" type="video/mp4" />
+          </video>
+          <div class="interlude-overlay"></div>
+          <div class="interlude-copy">
+            <span>horizontal story / tattoo texture</span>
+            <h3 data-i18n="interludeTattooTitle">Когда кадр дышит шире, история становится дороже.</h3>
+          </div>
+        </section>
+
+        <div class="category-block reveal" id="beauty-work">
+          <div class="category-header">
+            <span>02</span>
+            <h3 data-i18n="catBeautyTitle">Lash / beauty master</h3>
+            <p data-i18n="catBeautyText">Для мастеров ресничек и beauty-услуг важны доверие, чистота, спокойная атмосфера и близкие детали. Здесь акцент на руках, глазах, рабочем месте и ощущении сервиса.</p>
+          </div>
+          <div class="portfolio-deck beauty-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/lashes-01.mp4.jpg"><source src="assets/video/lashes-01.mp4" type="video/mp4" /></video>
+              <div><span>Lashes / detail</span><strong data-i18n="workLashesDetail">Деталь, которая продает доверие</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/lashes-02.mp4.jpg"><source src="assets/video/lashes-02.mp4" type="video/mp4" /></video>
+              <div><span>Beauty / atmosphere</span><strong data-i18n="workLashesAtmosphere">Атмосфера кабинета</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block reveal" id="barber-work">
+          <div class="category-header">
+            <span>03</span>
+            <h3 data-i18n="catBarberTitle">Barbershop</h3>
+            <p data-i18n="catBarberText">Мужской визуальный стиль: свет, зеркало, машинка, команда, динамика кресла и детали стрижки. Такой контент помогает показать атмосферу места, а не просто услугу.</p>
+          </div>
+          <div class="portfolio-deck barber-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/barber-01-vertical.mp4.jpg"><source src="assets/video/barber-01-vertical.mp4" type="video/mp4" /></video>
+              <div><span>Barber / hero reel</span><strong data-i18n="workBarberHero">Стиль места с первых секунд</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/barber-02-vertical.mp4.jpg"><source src="assets/video/barber-02-vertical.mp4" type="video/mp4" /></video>
+              <div><span>Barber / vertical</span><strong data-i18n="workBarberVertical">Вертикальный ролик для reels</strong></div>
+            </article>
+            <article class="clip-card reveal delay-2" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/barber-03-vertical.mp4.jpg"><source src="assets/video/barber-03-vertical.mp4" type="video/mp4" /></video>
+              <div><span>Barber / portrait</span><strong data-i18n="workBarberPortrait">Портрет клиента и мастера</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <section class="cinema-interlude interlude-triptych reveal" aria-label="Barbershop atmosphere transition">
+          <div class="ambient-stack">
+            <video class="ambient-video" muted loop playsinline preload="metadata" poster="assets/posters/barber-04-horizontal.mp4.jpg"><source src="assets/video/barber-04-horizontal.mp4" type="video/mp4" /></video>
+            <video class="ambient-video" muted loop playsinline preload="metadata" poster="assets/posters/barber-05-horizontal.mp4.jpg"><source src="assets/video/barber-05-horizontal.mp4" type="video/mp4" /></video>
+            <video class="ambient-video" muted loop playsinline preload="metadata" poster="assets/posters/barber-06-horizontal.mp4.jpg"><source src="assets/video/barber-06-horizontal.mp4" type="video/mp4" /></video>
+          </div>
+          <div class="interlude-overlay"></div>
+          <div class="interlude-copy align-right">
+            <span>barbershop / mirror / neon</span>
+            <h3 data-i18n="interludeBarberTitle">Свет, зеркало и движение превращают услугу в атмосферу.</h3>
+          </div>
+        </section>
+
+        <div class="category-block reveal" id="business-work">
+          <div class="category-header">
+            <span>04</span>
+            <h3 data-i18n="catBusinessTitle">Advertising & local business</h3>
+            <p data-i18n="catBusinessText">Для рекламы главное — быстро объяснить услугу и удержать внимание. Здесь ролики для продукта, эксперта, одежды, тату-рекламы и локального продвижения.</p>
+          </div>
+          <div class="portfolio-deck business-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/adv-profi-speaker.mp4.jpg"><source src="assets/video/adv-profi-speaker.mp4" type="video/mp4" /></video>
+              <div><span>Expert / ad</span><strong data-i18n="workAdvExpert">Экспертный social ad</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/adv-tshirts.mp4.jpg"><source src="assets/video/adv-tshirts.mp4" type="video/mp4" /></video>
+              <div><span>Fashion / product</span><strong data-i18n="workAdvTshirts">Одежда через деталь</strong></div>
+            </article>
+            <article class="clip-card reveal delay-2" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/product-holder.mp4.jpg"><source src="assets/video/product-holder.mp4" type="video/mp4" /></video>
+              <div><span>Product / holder</span><strong data-i18n="workProductHolder">Предмет как герой кадра</strong></div>
+            </article>
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/adv-tattoo-short.mp4.jpg"><source src="assets/video/adv-tattoo-short.mp4" type="video/mp4" /></video>
+              <div><span>Ad / tattoo</span><strong data-i18n="workAdvTattooShort">Быстрый рекламный хук</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/adv-tattoo-02.mp4.jpg"><source src="assets/video/adv-tattoo-02.mp4" type="video/mp4" /></video>
+              <div><span>Ad / poster style</span><strong data-i18n="workAdvTattoo02">Рекламный постер в движении</strong></div>
+            </article>
+            <article class="clip-card reveal delay-2" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/adv-tattoo-03.mp4.jpg"><source src="assets/video/adv-tattoo-03.mp4" type="video/mp4" /></video>
+              <div><span>Ad / local</span><strong data-i18n="workAdvTattoo03">Локальная реклама услуги</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block reveal" id="events-work">
+          <div class="category-header">
+            <span>05</span>
+            <h3 data-i18n="catEventsTitle">Events & horizontal stories</h3>
+            <p data-i18n="catEventsText">Когда нужен не просто reel, а ощущение события: афиша, атмосфера, люди, пространство и горизонтальный контент для сайта, YouTube или презентации.</p>
+          </div>
+          <div class="portfolio-deck events-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/event-halloween.mp4.jpg"><source src="assets/video/event-halloween.mp4" type="video/mp4" /></video>
+              <div><span>Event / Halloween</span><strong data-i18n="workEventHalloween">Афиша оживает</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/event-tattoo.mp4.jpg"><source src="assets/video/event-tattoo.mp4" type="video/mp4" /></video>
+              <div><span>Event / tattoo</span><strong data-i18n="workEventTattoo">Событие через движение</strong></div>
+            </article>
+          </div>
+        </div>
+
+        <section class="cinema-interlude thin-interlude reveal" aria-label="Film grain transition">
+          <video class="ambient-video" muted loop playsinline preload="metadata" poster="assets/posters/barber-05-horizontal.mp4.jpg">
+            <source src="assets/video/barber-05-horizontal.mp4" type="video/mp4" />
+          </video>
+          <div class="interlude-overlay"></div>
+          <div class="interlude-copy">
+            <span>scrolling reel / atmosphere layer</span>
+            <h3 data-i18n="interludeReelTitle">Не просто портфолио — ощущение продакшна во время скролла.</h3>
+          </div>
+        </section>
+
+        <div class="category-block reveal" id="ai-work">
+          <div class="category-header">
+            <span>06</span>
+            <h3 data-i18n="catAiTitle">AI visuals & motion</h3>
+            <p data-i18n="catAiText">Нейросетевые визуалы и motion-переходы для смелых кампаний: можно быстро собрать mood, необычный кадр или концепт, который отличается от обычной съемки.</p>
+          </div>
+          <div class="portfolio-deck ai-deck">
+            <article class="clip-card reveal" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/ai-transition.mp4.jpg"><source src="assets/video/ai-transition.mp4" type="video/mp4" /></video>
+              <div><span>AI / transition</span><strong data-i18n="workAiTransition">Нейро-переход и образ</strong></div>
+            </article>
+            <article class="clip-card reveal delay-1" data-hover="hover / play">
+              <video muted loop playsinline preload="metadata" poster="assets/posters/ai-motion.mp4.jpg"><source src="assets/video/ai-motion.mp4" type="video/mp4" /></video>
+              <div><span>AI / motion</span><strong data-i18n="workAiMotion">Motion mood через AI</strong></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="portrait-card reveal">
+          <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-main.mp4.jpg">
+            <source src="assets/video/tattoo-main.mp4" type="video/mp4" />
+          </video>
+          <div class="portrait-label">Andrii Hevich<br />kinosnimaemm</div>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <p class="section-kicker">About</p>
+          <h2 data-i18n="aboutTitle">Я соединяю съемку, монтаж и post-production в один понятный процесс.</h2>
+          <p data-i18n="aboutTextA">Меня зовут Andrii Hevich. У меня 5 лет опыта в продакшне: монтаж коммерческих проектов, motion-графика, цвет, работа в команде и полный цикл контента для предпринимателей.</p>
+          <p data-i18n="aboutTextB">С 2024 года работаю на фрилансе в Германии: помогаю брендам, tattoo artists, YouTube-проектам и events превращать идею в готовый ролик — от сценария до публикации.</p>
+          <div class="stats">
+            <div><strong>5+</strong><span data-i18n="statYears">лет опыта</span></div>
+            <div><strong>DE</strong><span data-i18n="statGeo">по всей Германии</span></div>
+            <div><strong>360°</strong><span data-i18n="statCycle">съемка → монтаж → цвет</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">Services</p>
+            <h2 data-i18n="servicesTitle">Что можно заказать</h2>
+          </div>
+        </div>
+        <div class="service-list service-list-six">
+          <article class="service reveal">
+            <span>01</span>
+            <h3 data-i18n="serviceCommercialTitle">Commercial video</h3>
+            <p data-i18n="serviceCommercialText">Рекламные ролики, reels, shorts и social ads для услуг, продукта и локального бизнеса.</p>
+          </article>
+          <article class="service reveal delay-1">
+            <span>02</span>
+            <h3 data-i18n="serviceTattooTitle">Tattoo content</h3>
+            <p data-i18n="serviceTattooText">Контент для tattoo artists: процесс, детали, портрет мастера, студия и showreel.</p>
+          </article>
+          <article class="service reveal delay-2">
+            <span>03</span>
+            <h3 data-i18n="serviceBeautyTitle">Beauty masters</h3>
+            <p data-i18n="serviceBeautyText">Ролики для lash/beauty-мастеров: доверие, чистота, руки, детали и атмосфера.</p>
+          </article>
+          <article class="service reveal delay-3">
+            <span>04</span>
+            <h3 data-i18n="serviceBarberTitle">Barbershop</h3>
+            <p data-i18n="serviceBarberText">Мужской visual style для барбершопов: команда, зеркало, машинка, свет и динамика.</p>
+          </article>
+          <article class="service reveal">
+            <span>05</span>
+            <h3 data-i18n="serviceEventsTitle">Events / horizontal</h3>
+            <p data-i18n="serviceEventsText">Aftermovies, mood-ролики и горизонтальные истории для сайта, YouTube или презентации.</p>
+          </article>
+          <article class="service reveal delay-1">
+            <span>06</span>
+            <h3 data-i18n="serviceAiTitle">AI / motion</h3>
+            <p data-i18n="serviceAiText">AI-визуалы, motion-переходы и концептные ролики для необычной подачи.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process reveal">
+        <p class="section-kicker">Process</p>
+        <div class="process-line">
+          <div><span>Brief</span><p data-i18n="processBrief">цель, стиль, площадка</p></div>
+          <div><span>Shoot</span><p data-i18n="processShoot">DOP, свет, движение</p></div>
+          <div><span>Edit</span><p data-i18n="processEdit">ритм, звук, графика</p></div>
+          <div><span>Delivery</span><p data-i18n="processDelivery">финальные версии под платформы</p></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-inner reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 data-i18n="contactTitle">Давайте снимем видео, которое выглядит дороже обычного контента.</h2>
+          <p data-i18n="contactText">Ссылки на Instagram, Telegram, email и WhatsApp подключим следующим шагом. Пока можно оставить этот блок как финальный CTA.</p>
+          <div class="contact-links">
+            <a href="mailto:kinosnimaemm@gmail.com">kinosnimaemm@gmail.com</a>
+            <a href="https://t.me/youmee_to">Telegram</a>
+            <a href="#" aria-disabled="true">Instagram soon</a>
+            <a href="#" aria-disabled="true">WhatsApp soon</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 kinosnimaemm</span>
+      <span>Andrii Hevich — video editing / DOP / motion design / AI</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
