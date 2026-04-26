@@ -1,6 +1,30 @@
-# kinosnimaemm portfolio
+# kinosnimaemm
 
-Static portfolio landing page for GitHub Pages.
+Cinematic portfolio landing page for **kinosnimaemm** — video production by Andrii Hevich.
+
+Live website:
+
+```text
+https://kinosnimaemm.github.io/
+```
+
+## Directions
+
+- Commercial video
+- Tattoo content
+- Barbershop visuals
+- Lash / beauty master content
+- Events and horizontal stories
+- AI visuals and motion design
+
+## Stack
+
+Static GitHub Pages website:
+
+- HTML
+- CSS
+- JavaScript
+- Optimized web video assets
 
 ## Local preview
 
@@ -8,8 +32,8 @@ Static portfolio landing page for GitHub Pages.
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080` from this folder.
+Open:
 
-## Deploy to GitHub Pages
-
-Push this folder to `https://github.com/kinosnimaemm/kinosnimaemm.github.io`, then enable GitHub Pages from the `main` branch root in repository settings.
+```text
+http://localhost:8080
+```
