@@ -385,3 +385,170 @@ WhatsApp:
 ```text
 НЕ ХРАНИТЬ В ЭТОМ ФАЙЛЕ
 ```
+
+---
+
+# Актуальный статус деплоя — 26 апреля 2026
+
+Сайт уже загружен на GitHub Pages.
+
+## Финальный адрес сайта
+
+```text
+https://kinosnimaemm.github.io/
+```
+
+## Финальный GitHub repository
+
+Репозиторий был переименован:
+
+```text
+старое имя: kino.web.github.io
+новое имя: kinosnimaemm.github.io
+```
+
+Текущий repository:
+
+```text
+https://github.com/kinosnimaemm/kinosnimaemm.github.io
+```
+
+Git remote в локальной папке проекта:
+
+```text
+https://github.com/kinosnimaemm/kinosnimaemm.github.io.git
+```
+
+## Что было сделано
+
+1. Установлен GitHub CLI:
+
+```text
+gh 2.91.0
+```
+
+2. Выполнена авторизация под GitHub-аккаунтом:
+
+```text
+kinosnimaemm
+```
+
+3. Репозиторий переименован в:
+
+```text
+kinosnimaemm.github.io
+```
+
+4. Сайт загружен в ветку:
+
+```text
+main
+```
+
+5. GitHub Pages настроен на:
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: / root
+```
+
+6. GitHub Pages status после проверки:
+
+```text
+built
+```
+
+7. Проверка сайта дала:
+
+```text
+HTTP 200
+content: ok
+```
+
+## Последний известный commit сайта
+
+```text
+18d89c8 Create kinosnimaemm portfolio landing page
+```
+
+## Как обновлять сайт дальше
+
+После любых изменений в файлах сайта выполнить:
+
+```bash
+cd '/Users/eqtech/Desktop/ПОРТФОЛИО/web_kino'
+git status
+git add .
+git commit -m "Update portfolio site"
+git push
+```
+
+После `git push` GitHub Pages обычно обновляется за 1–3 минуты.
+
+Проверить сайт:
+
+```text
+https://kinosnimaemm.github.io/
+```
+
+Если сайт в браузере не обновился сразу, сделать hard refresh:
+
+```text
+Cmd + Shift + R
+```
+
+## Как проверить GitHub Pages через Terminal
+
+```bash
+gh api repos/kinosnimaemm/kinosnimaemm.github.io/pages --jq '{html_url:.html_url,status:.status,source:.source}'
+```
+
+Ожидаемый результат:
+
+```text
+html_url: https://kinosnimaemm.github.io/
+status: built
+source.branch: main
+source.path: /
+```
+
+## Как проверить сайт через Terminal
+
+```bash
+curl -L -I https://kinosnimaemm.github.io/
+```
+
+Ожидаемо:
+
+```text
+HTTP/2 200
+```
+
+## Важное про доступы
+
+GitHub CLI сейчас авторизован на этом Mac под аккаунтом:
+
+```text
+kinosnimaemm
+```
+
+Проверить:
+
+```bash
+gh auth status
+```
+
+Выйти из аккаунта:
+
+```bash
+gh auth logout
+```
+
+Повторно войти:
+
+```bash
+gh auth login --web --git-protocol https --scopes repo
+```
+
+Пароли и токены по-прежнему **не хранить в этом файле**.
