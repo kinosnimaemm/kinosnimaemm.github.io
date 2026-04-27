@@ -191,7 +191,7 @@ window.addEventListener('pointermove', (event) => {
 const progressFill = document.querySelector('.scroll-progress span');
 const hudIndex = document.querySelector('.hud-index');
 const hudLabel = document.querySelector('.hud-label');
-const sceneSections = [...document.querySelectorAll('.hero, .category-block, .cinema-interlude, .contact')];
+const sceneSections = [...document.querySelectorAll('.hero, .about-intro, .direction-panel, .cinema-interlude, .contact')];
 let ticking = false;
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -245,4 +245,16 @@ window.addEventListener('scroll', requestScrollMagic, { passive: true });
 window.addEventListener('resize', requestScrollMagic);
 updateScrollMagic();
 
-setLanguage(localStorage.getItem('kino-lang') || 'ru');
+const detectInitialLanguage = () => {
+  const saved = localStorage.getItem('kino-lang');
+  if (saved && translations[saved]) return saved;
+
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language || 'en'];
+  const normalized = browserLanguages.map((lang) => lang.toLowerCase());
+
+  if (normalized.some((lang) => lang.startsWith('de'))) return 'de';
+  if (normalized.some((lang) => lang.startsWith('ru') || lang.startsWith('uk'))) return 'ru';
+  return 'en';
+};
+
+setLanguage(detectInitialLanguage());
