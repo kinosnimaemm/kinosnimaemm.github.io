@@ -1793,3 +1793,57 @@ h2::selection { background: var(--accent); color: #130d08; }
 @media (max-width: 520px) {
   .intro-facts { grid-template-columns: 1fr; }
 }
+
+/* Refined hero hover: local orange light only around cursor, no rectangular plate. */
+.hero-title {
+  isolation: isolate;
+}
+.hero-title::before {
+  inset: -18% -10%;
+  z-index: 0;
+  background:
+    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.58) 0%, rgba(255,106,42,.28) 14%, rgba(255,106,42,.10) 30%, transparent 52%),
+    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(215,166,88,.24) 0%, transparent 34%);
+  opacity: 0;
+  transform: none;
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  transition: opacity .28s ease;
+}
+.hero-title:hover::before {
+  opacity: 1;
+  transform: none;
+}
+.hero-title span,
+.hero-title em {
+  position: relative;
+  z-index: 1;
+}
+.hero-title:hover span {
+  color: var(--text);
+  text-shadow:
+    0 0 22px rgba(255,106,42,.18),
+    0 0 48px rgba(255,106,42,.12);
+}
+.hero-title:hover em {
+  color: rgba(241,234,223,.94);
+  text-shadow:
+    0 0 20px rgba(255,106,42,.22),
+    0 0 46px rgba(255,106,42,.12);
+}
+.hero-title span::after,
+.hero-title em::after {
+  content: attr(data-hover-text);
+  position: absolute;
+  inset: 0;
+  color: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), #000 0%, #000 18%, transparent 36%);
+  mask-image: radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), #000 0%, #000 18%, transparent 36%);
+  transition: opacity .18s ease;
+}
+.hero-title:hover span::after,
+.hero-title:hover em::after {
+  opacity: 1;
+}

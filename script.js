@@ -1,7 +1,7 @@
 const translations = {
   ru: {
     navWork: 'Работы', navAbout: 'Обо мне', navServices: 'Услуги', navContact: 'Контакт',
-    heroTitleA: 'Showreel / монтаж', heroTitleB: 'съемка, ритм и cinematic cut.',
+    heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'съемка, ритм и cinematic cut.',
     heroCopy: 'kinosnimaemm — визуальная визитка Андрея Гевича: video editing, DOP, съемка, motion design и AI-визуалы для брендов, мастеров, событий и digital-контента.',
     heroCtaWork: 'Смотреть работы', heroCtaContact: 'Обсудить проект',
     introText: 'Я базируюсь в Германии и работаю как freelance video editor / DOP по Европе и worldwide. 5+ лет в продакшне: монтаж, съемка, color, motion design, AI-визуалы и полный цикл контента — от идеи до финального cut.',
@@ -28,7 +28,7 @@ const translations = {
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
-    heroTitleA: 'Showreel / editing', heroTitleB: 'shooting, rhythm and cinematic cut.',
+    heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'shooting, rhythm and cinematic cut.',
     heroCopy: 'kinosnimaemm is Andrii Hevich’s visual card: video editing, DOP, shooting, motion design and AI visuals for brands, artists, events and digital content.',
     heroCtaWork: 'View works', heroCtaContact: 'Discuss a project',
     introText: 'I am based in Germany and work as a freelance video editor / DOP across Europe and worldwide. 5+ years in production: editing, shooting, color, motion design, AI visuals and full-cycle content — from idea to final cut.',
@@ -55,7 +55,7 @@ const translations = {
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
-    heroTitleA: 'Showreel / editing', heroTitleB: 'Dreh, Rhythmus und cinematic cut.',
+    heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'Dreh, Rhythmus und cinematic cut.',
     heroCopy: 'kinosnimaemm ist die visuelle Karte von Andrii Hevich: Video Editing, DOP, Dreh, Motion Design und AI Visuals für Brands, Artists, Events und Digital Content.',
     heroCtaWork: 'Arbeiten ansehen', heroCtaContact: 'Projekt besprechen',
     introText: 'Ich bin in Deutschland basiert und arbeite als freelance video editor / DOP in Europa und worldwide. 5+ Jahre Produktion: Schnitt, Dreh, Color, Motion Design, AI Visuals und Full-Cycle Content — von Idee bis Final Cut.',
@@ -96,7 +96,10 @@ const setLanguage = (lang) => {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach((node) => {
     const key = node.dataset.i18n;
-    if (translations[lang][key]) node.textContent = translations[lang][key];
+    if (translations[lang][key]) {
+      node.textContent = translations[lang][key];
+      if (node.closest('.hero-title')) node.setAttribute('data-hover-text', translations[lang][key]);
+    }
   });
   document.querySelectorAll('[data-lang]').forEach((button) => {
     button.classList.toggle('active', button.dataset.lang === lang);
