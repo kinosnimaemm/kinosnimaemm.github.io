@@ -156,6 +156,12 @@ document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
 
 const clipCards = document.querySelectorAll('.clip-card, .portrait-card');
 clipCards.forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    card.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  });
+
   const video = card.querySelector('video');
   if (!video) return;
   card.setAttribute('tabindex', '0');
@@ -218,5 +224,63 @@ window.addEventListener('pointermove', (event) => {
   cursorLight.style.left = `${event.clientX}px`;
   cursorLight.style.top = `${event.clientY}px`;
 });
+
+
+const progressFill = document.querySelector('.scroll-progress span');
+const hudIndex = document.querySelector('.hud-index');
+const hudLabel = document.querySelector('.hud-label');
+const sceneSections = [...document.querySelectorAll('.hero, .category-block, .cinema-interlude, .contact')];
+let ticking = false;
+
+const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const getSceneLabel = (section) => {
+  if (section.classList.contains('hero')) return 'opening frame';
+  if (section.classList.contains('contact')) return 'contact / booking';
+  const heading = section.querySelector('h3, h2');
+  return heading ? heading.textContent.trim() : 'portfolio scene';
+};
+
+const updateScrollMagic = () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const pageProgress = clamp(scrollTop / maxScroll);
+  document.documentElement.style.setProperty('--page-progress', pageProgress.toFixed(4));
+  if (progressFill) progressFill.style.transform = `scaleX(${pageProgress})`;
+
+  let activeIndex = 0;
+  let activeDistance = Infinity;
+  const viewportCenter = window.innerHeight * 0.48;
+
+  sceneSections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height * 0.5;
+    const distance = Math.abs(sectionCenter - viewportCenter);
+    if (rect.bottom > 0 && rect.top < window.innerHeight && distance < activeDistance) {
+      activeDistance = distance;
+      activeIndex = index;
+    }
+
+    if (section.classList.contains('cinema-interlude')) {
+      const sceneProgress = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height));
+      section.style.setProperty('--scene-progress', sceneProgress.toFixed(4));
+    }
+  });
+
+  const active = sceneSections[activeIndex];
+  if (hudIndex) hudIndex.textContent = String(activeIndex).padStart(2, '0');
+  if (hudLabel && active) hudLabel.textContent = getSceneLabel(active);
+  ticking = false;
+};
+
+const requestScrollMagic = () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateScrollMagic);
+    ticking = true;
+  }
+};
+
+window.addEventListener('scroll', requestScrollMagic, { passive: true });
+window.addEventListener('resize', requestScrollMagic);
+updateScrollMagic();
 
 setLanguage(localStorage.getItem('kino-lang') || 'ru');

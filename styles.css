@@ -1345,3 +1345,231 @@ h2::selection { background: var(--accent); color: #130d08; }
 @media (max-width: 640px) {
   .brief-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Creator-site polish: denser editorial rhythm + fixed cinematic HUD. */
+:root {
+  --page-progress: 0;
+  --scene-progress: 0;
+}
+.scroll-progress {
+  position: fixed;
+  z-index: 80;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: rgba(241,234,223,.08);
+  pointer-events: none;
+}
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(var(--page-progress));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), rgba(241,234,223,.88));
+  box-shadow: 0 0 26px rgba(255,106,42,.45);
+}
+.film-hud {
+  position: fixed;
+  z-index: 45;
+  left: clamp(1rem, 2vw, 1.8rem);
+  bottom: clamp(1rem, 2vw, 1.6rem);
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: .65rem;
+  align-items: center;
+  color: rgba(241,234,223,.7);
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.hud-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(241,234,223,.32);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: .68rem;
+}
+.hud-label {
+  max-width: 15rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .62rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+.scroll-wordmark {
+  position: fixed;
+  z-index: -1;
+  left: -5vw;
+  bottom: 3vh;
+  color: rgba(241,234,223,.028);
+  font-family: var(--display);
+  font-size: clamp(4rem, 18vw, 18rem);
+  letter-spacing: -.09em;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(calc(var(--page-progress) * -18vw));
+}
+.section {
+  padding-top: clamp(3.4rem, 7vw, 6.4rem);
+  padding-bottom: clamp(3.4rem, 7vw, 6.4rem);
+}
+.works {
+  padding-top: clamp(3rem, 6vw, 5.2rem);
+}
+.section-head {
+  margin-bottom: clamp(1.2rem, 3vw, 2rem);
+}
+.journey-grid {
+  gap: .55rem;
+  margin-bottom: clamp(2.2rem, 5vw, 4.4rem);
+}
+.journey-grid a {
+  min-height: 10.4rem;
+  padding: .9rem;
+}
+.category-block {
+  margin-top: clamp(1.4rem, 3.5vw, 3.2rem);
+  padding-top: clamp(1.8rem, 4.2vw, 3.8rem);
+  padding-bottom: clamp(1.8rem, 4.2vw, 3.8rem);
+}
+.category-header {
+  margin-bottom: clamp(.9rem, 2vw, 1.5rem);
+}
+.feature-deck,
+.barber-deck,
+.business-deck {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+.beauty-deck,
+.ai-deck {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  max-width: min(56rem, 100%);
+}
+.events-deck {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  max-width: min(56rem, 100%);
+}
+.clip-card,
+.clip-card.tall,
+.portfolio-deck.product-deck .clip-card,
+.portfolio-deck.ai-deck .clip-card.wide,
+.portfolio-deck.product-deck .clip-card.wide {
+  aspect-ratio: 9 / 14.65 !important;
+}
+.clip-card strong {
+  font-size: clamp(1.22rem, 1.72vw, 2.05rem);
+}
+.clip-card span {
+  font-size: .6rem;
+}
+.cinema-interlude {
+  margin-top: clamp(1.8rem, 4vw, 3.6rem);
+  margin-bottom: clamp(1.8rem, 4vw, 3.6rem);
+}
+@media (min-width: 1380px) {
+  .business-deck { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 1180px) {
+  .feature-deck,
+  .barber-deck,
+  .business-deck { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 820px) {
+  .film-hud { display: none; }
+  .feature-deck,
+  .barber-deck,
+  .business-deck,
+  .beauty-deck,
+  .ai-deck,
+  .events-deck { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 640px) {
+  .feature-deck,
+  .barber-deck,
+  .business-deck,
+  .beauty-deck,
+  .ai-deck,
+  .events-deck { grid-template-columns: 1fr !important; }
+}
+
+/* Scroll magic details: parallax interludes, spotlight cards, kinetic reveals. */
+.reveal {
+  filter: blur(10px);
+  transform: translateY(34px) scale(.985);
+  transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1), filter .9s ease;
+}
+.reveal.visible {
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+.category-block.visible .category-header h3 {
+  animation: chapterPunch .95s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes chapterPunch {
+  0% { letter-spacing: -.11em; opacity: .35; transform: translateY(.8rem); }
+  100% { letter-spacing: -.065em; opacity: 1; transform: translateY(0); }
+}
+.clip-card::before {
+  background:
+    radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,106,42,.22), transparent 13rem),
+    linear-gradient(to top, rgba(8,7,6,.94), rgba(8,7,6,.48) 27%, rgba(8,7,6,.08) 64%, transparent),
+    linear-gradient(145deg, rgba(255,106,42,.09), transparent 42%);
+}
+.clip-card:hover,
+.clip-card.is-playing {
+  transform: translateY(-.52rem) scale(1.012) !important;
+}
+.clip-card:hover::after,
+.clip-card.is-playing::after {
+  letter-spacing: .2em;
+}
+.cinema-interlude {
+  --scene-progress: 0;
+}
+.cinema-interlude .ambient-video {
+  transform: translate3d(0, calc((var(--scene-progress) - .5) * -9rem), 0) scale(1.08);
+}
+.cinema-interlude.visible .ambient-video {
+  transform: translate3d(0, calc((var(--scene-progress) - .5) * -5rem), 0) scale(1.025);
+}
+.interlude-copy {
+  transform: translate3d(0, calc((var(--scene-progress) - .5) * 4rem), 0);
+}
+.interlude-copy h3 {
+  background: linear-gradient(90deg, rgba(241,234,223,1), rgba(215,166,88,.92), rgba(241,234,223,.82));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.interlude-copy span::before {
+  content: "";
+  display: inline-block;
+  width: 2.6rem;
+  height: 1px;
+  margin-right: .75rem;
+  vertical-align: middle;
+  background: var(--accent);
+  transform: scaleX(calc(.25 + var(--scene-progress) * .75));
+  transform-origin: left;
+}
+.ambient-stack {
+  transform: rotate(calc(-1deg + var(--scene-progress) * 2deg)) scale(1.045);
+}
+.ambient-stack .ambient-video:nth-child(1) { transition-delay: .05s; }
+.ambient-stack .ambient-video:nth-child(2) { transition-delay: .14s; }
+.ambient-stack .ambient-video:nth-child(3) { transition-delay: .23s; }
+.contact-inner {
+  box-shadow: 0 2rem 8rem rgba(0,0,0,.42), 0 0 0 1px rgba(255,106,42,.08) inset;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { filter: none; }
+  .cinema-interlude .ambient-video,
+  .cinema-interlude.visible .ambient-video,
+  .interlude-copy { transform: none; }
+}
