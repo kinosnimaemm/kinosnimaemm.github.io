@@ -1,10 +1,10 @@
 const translations = {
   ru: {
     navWork: 'Работы', navAbout: 'Обо мне', navServices: 'Услуги', navContact: 'Контакт',
-    heroTitleA: 'Киношная картинка', heroTitleB: 'для брендов, людей и событий.',
-    heroCopy: 'kinosnimaemm — продакшн Андрея Гевича: съемка, монтаж, DOP, motion design и AI-инструменты для коммерческих роликов, tattoo artists, YouTube и events по всей Германии.',
+    heroTitleA: 'Showreel / монтаж', heroTitleB: 'съемка, ритм и cinematic cut.',
+    heroCopy: 'kinosnimaemm — визуальная визитка Андрея Гевича: video editing, DOP, съемка, motion design и AI-визуалы для брендов, мастеров, событий и digital-контента.',
     heroCtaWork: 'Смотреть работы', heroCtaContact: 'Обсудить проект',
-    introText: 'Я делаю видео, которое выглядит как кампания бренда: резкий ритм, чистый монтаж, живой город, кожа, свет, движение и кадры, которые хочется пересмотреть.',
+    introText: 'Я базируюсь в Германии и работаю как freelance video editor / DOP по Европе и worldwide. 5+ лет в продакшне: монтаж, съемка, color, motion design, AI-визуалы и полный цикл контента — от идеи до финального cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'Это не каталог услуг, а визуальная визитка: уровень монтажа, съемки, ритма и картинки. Два направления — монтаж готового материала и полный продакшн от идеи до финального ролика.',
     editingTitle: 'Video Editing', editingText: 'Когда материал уже снят: собираю ритм, историю, звук, цвет, титры, motion/AI-визуалы и финальные версии под social, YouTube или рекламу.',
@@ -28,10 +28,10 @@ const translations = {
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
-    heroTitleA: 'Cinematic image', heroTitleB: 'for brands, people and events.',
-    heroCopy: 'kinosnimaemm is Andrii Hevich’s production: filming, editing, DOP, motion design and AI tools for commercials, tattoo artists, YouTube and events across Germany.',
+    heroTitleA: 'Showreel / editing', heroTitleB: 'shooting, rhythm and cinematic cut.',
+    heroCopy: 'kinosnimaemm is Andrii Hevich’s visual card: video editing, DOP, shooting, motion design and AI visuals for brands, artists, events and digital content.',
     heroCtaWork: 'View works', heroCtaContact: 'Discuss a project',
-    introText: 'I create video that feels like a brand campaign: sharp rhythm, clean editing, living city, skin, light, movement and frames you want to replay.',
+    introText: 'I am based in Germany and work as a freelance video editor / DOP across Europe and worldwide. 5+ years in production: editing, shooting, color, motion design, AI visuals and full-cycle content — from idea to final cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'This is not a service catalogue — it is a visual card: editing level, shooting level, rhythm and image. Two directions: editing existing footage and full production from idea to final cut.',
     editingTitle: 'Video Editing', editingText: 'When the footage is already shot: I build rhythm, story, sound, color, titles, motion/AI visuals and final versions for social, YouTube or ads.',
@@ -55,10 +55,10 @@ const translations = {
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
-    heroTitleA: 'Cinematic Look', heroTitleB: 'für Marken, Menschen und Events.',
-    heroCopy: 'kinosnimaemm ist die Produktion von Andrii Hevich: Dreh, Schnitt, DOP, Motion Design und AI-Tools für Commercials, Tattoo Artists, YouTube und Events in ganz Deutschland.',
+    heroTitleA: 'Showreel / editing', heroTitleB: 'Dreh, Rhythmus und cinematic cut.',
+    heroCopy: 'kinosnimaemm ist die visuelle Karte von Andrii Hevich: Video Editing, DOP, Dreh, Motion Design und AI Visuals für Brands, Artists, Events und Digital Content.',
     heroCtaWork: 'Arbeiten ansehen', heroCtaContact: 'Projekt besprechen',
-    introText: 'Ich produziere Videos mit Kampagnengefühl: klarer Rhythmus, sauberer Schnitt, lebendige Stadt, Haut, Licht, Bewegung und Bilder, die man wieder ansehen möchte.',
+    introText: 'Ich bin in Deutschland basiert und arbeite als freelance video editor / DOP in Europa und worldwide. 5+ Jahre Produktion: Schnitt, Dreh, Color, Motion Design, AI Visuals und Full-Cycle Content — von Idee bis Final Cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'Das ist kein Service-Katalog, sondern eine visuelle Visitenkarte: Schnitt, Dreh, Rhythmus und Bildgefühl. Zwei Richtungen: Schnitt von vorhandenem Material und Full Production von Idee bis Final Cut.',
     editingTitle: 'Video Editing', editingText: 'Wenn das Material schon gedreht ist: Ich baue Rhythmus, Story, Sound, Color, Titles, Motion/AI Visuals und finale Versionen für Social, YouTube oder Ads.',
@@ -81,6 +81,16 @@ const translations = {
     contactText: 'kinosnimaemm — video editing und full production in Deutschland. Links unten, ohne extra Formular und ohne Sales-Lärm.'
   }
 };
+
+
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+  heroTitle.addEventListener('pointermove', (event) => {
+    const rect = heroTitle.getBoundingClientRect();
+    heroTitle.style.setProperty('--title-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    heroTitle.style.setProperty('--title-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  });
+}
 
 const setLanguage = (lang) => {
   document.documentElement.lang = lang;

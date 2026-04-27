@@ -1719,3 +1719,77 @@ h2::selection { background: var(--accent); color: #130d08; }
   .direction-head { grid-template-columns: 1fr; }
   .direction-head em { grid-column: auto; }
 }
+
+/* Hero refinement: showreel/editor identity with orange hover field. */
+.hero-title {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  cursor: crosshair;
+}
+.hero-title::before {
+  content: "";
+  position: absolute;
+  inset: -.12em -.08em;
+  z-index: -1;
+  background:
+    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.42), transparent 28%),
+    linear-gradient(90deg, rgba(255,106,42,.16), transparent 72%);
+  opacity: 0;
+  transform: scale(.985);
+  transition: opacity .32s ease, transform .32s ease;
+  pointer-events: none;
+}
+.hero-title:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.hero-title span,
+.hero-title em {
+  transition: color .32s ease, text-shadow .32s ease, -webkit-text-stroke-color .32s ease;
+}
+.hero-title:hover span {
+  color: var(--accent);
+  text-shadow: 0 0 34px rgba(255,106,42,.24);
+}
+.hero-title:hover em {
+  color: rgba(255,106,42,.95);
+  text-shadow: 0 0 30px rgba(255,106,42,.18);
+}
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  padding-top: clamp(3rem, 6vw, 5.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+.about-intro p {
+  max-width: 83rem;
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 4.6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 600;
+  color: rgba(241,234,223,.94);
+}
+.intro-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .6rem;
+  max-width: 78rem;
+}
+.intro-facts span {
+  border-top: 1px solid rgba(241,234,223,.16);
+  padding-top: .8rem;
+  color: rgba(241,234,223,.66);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .68rem;
+  font-weight: 900;
+}
+@media (max-width: 760px) {
+  .intro-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .intro-facts { grid-template-columns: 1fr; }
+}
