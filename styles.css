@@ -1799,16 +1799,16 @@ h2::selection { background: var(--accent); color: #130d08; }
   isolation: isolate;
 }
 .hero-title::before {
-  inset: -18% -10%;
+  inset: -24% -14%;
   z-index: 0;
   background:
-    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.58) 0%, rgba(255,106,42,.28) 14%, rgba(255,106,42,.10) 30%, transparent 52%),
-    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(215,166,88,.24) 0%, transparent 34%);
+    radial-gradient(20rem 14rem at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.50) 0%, rgba(255,106,42,.25) 22%, rgba(255,106,42,.09) 45%, transparent 72%),
+    radial-gradient(14rem 10rem at var(--title-x, 50%) var(--title-y, 50%), rgba(255,188,102,.22) 0%, transparent 68%);
   opacity: 0;
   transform: none;
-  filter: blur(18px);
+  filter: blur(8px);
   mix-blend-mode: screen;
-  transition: opacity .28s ease;
+  transition: opacity .26s ease;
 }
 .hero-title:hover::before {
   opacity: 1;
@@ -1819,29 +1819,39 @@ h2::selection { background: var(--accent); color: #130d08; }
   position: relative;
   z-index: 1;
 }
+.hero-title span {
+  display: block;
+}
 .hero-title:hover span {
   color: var(--text);
   text-shadow:
-    0 0 22px rgba(255,106,42,.18),
-    0 0 48px rgba(255,106,42,.12);
+    0 0 22px rgba(255,106,42,.16),
+    0 0 48px rgba(255,106,42,.10);
 }
 .hero-title:hover em {
   color: rgba(241,234,223,.94);
   text-shadow:
-    0 0 20px rgba(255,106,42,.22),
-    0 0 46px rgba(255,106,42,.12);
+    0 0 20px rgba(255,106,42,.20),
+    0 0 46px rgba(255,106,42,.10);
 }
 .hero-title span::after,
 .hero-title em::after {
   content: attr(data-hover-text);
   position: absolute;
   inset: 0;
-  color: var(--accent);
+  color: #ff7436;
   opacity: 0;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), #000 0%, #000 18%, transparent 36%);
-  mask-image: radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), #000 0%, #000 18%, transparent 36%);
-  transition: opacity .18s ease;
+  text-shadow:
+    0 0 10px rgba(255,116,54,.34),
+    0 0 34px rgba(255,106,42,.24);
+  -webkit-mask-image: radial-gradient(circle 12rem at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0%, #000 28%, rgba(0,0,0,.72) 44%, transparent 72%);
+  mask-image: radial-gradient(circle 12rem at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0%, #000 28%, rgba(0,0,0,.72) 44%, transparent 72%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition: opacity .16s ease;
 }
 .hero-title:hover span::after,
 .hero-title:hover em::after {

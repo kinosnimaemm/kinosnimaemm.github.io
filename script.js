@@ -85,11 +85,21 @@ const translations = {
 
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
-  heroTitle.addEventListener('pointermove', (event) => {
+  const titleLayers = heroTitle.querySelectorAll('span, em');
+  const updateTitleHoverPosition = (event) => {
     const rect = heroTitle.getBoundingClientRect();
     heroTitle.style.setProperty('--title-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
     heroTitle.style.setProperty('--title-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
-  });
+
+    titleLayers.forEach((layer) => {
+      const layerRect = layer.getBoundingClientRect();
+      layer.style.setProperty('--title-local-x', `${event.clientX - layerRect.left}px`);
+      layer.style.setProperty('--title-local-y', `${event.clientY - layerRect.top}px`);
+    });
+  };
+
+  heroTitle.addEventListener('pointerenter', updateTitleHoverPosition);
+  heroTitle.addEventListener('pointermove', updateTitleHoverPosition);
 }
 
 const setLanguage = (lang) => {
