@@ -187,12 +187,6 @@ videoModal?.addEventListener('cancel', (event) => {
 
 const clipCards = document.querySelectorAll('.clip-card, .portrait-card');
 clipCards.forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-    card.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
-  });
-
   const video = card.querySelector('video');
   if (!video) return;
   card.setAttribute('tabindex', '0');
@@ -266,25 +260,6 @@ ambientVideos.forEach((video) => {
   video.playsInline = true;
   ambientObserver.observe(video);
 });
-
-const cursorLight = document.querySelector('.cursor-light');
-if (cursorLight) {
-  let cursorFrame = null;
-  let cursorX = window.innerWidth / 2;
-  let cursorY = window.innerHeight / 2;
-
-  window.addEventListener('pointermove', (event) => {
-    cursorX = event.clientX;
-    cursorY = event.clientY;
-    if (cursorFrame) return;
-
-    cursorFrame = requestAnimationFrame(() => {
-      cursorLight.style.transform = `translate3d(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%), 0)`;
-      cursorFrame = null;
-    });
-  });
-}
-
 
 const progressFill = document.querySelector('.scroll-progress span');
 const hudIndex = document.querySelector('.hud-index');
