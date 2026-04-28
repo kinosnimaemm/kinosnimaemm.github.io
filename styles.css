@@ -1807,3 +1807,275 @@ h2::selection { background: var(--accent); color: #130d08; }
 .hero-title:hover em::after {
   opacity: 1;
 }
+
+/* Client-first portfolio pass: selected works, cleaner proof, accessible viewing. */
+body.modal-open {
+  overflow: hidden;
+}
+
+.quick-contact {
+  position: fixed;
+  right: clamp(1rem, 2vw, 1.6rem);
+  bottom: clamp(1rem, 2vw, 1.4rem);
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: .72rem 1rem;
+  border: 1px solid rgba(255,106,42,.55);
+  background: rgba(255,106,42,.88);
+  color: #120d09;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  box-shadow: 0 18px 52px rgba(255,106,42,.22);
+  transition: transform .24s ease, background .24s ease;
+}
+.quick-contact:hover {
+  transform: translateY(-2px);
+  background: #ff7436;
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.2rem;
+  max-width: 44rem;
+}
+.hero-proof span {
+  border: 1px solid rgba(241,234,223,.16);
+  background: rgba(11,11,10,.42);
+  padding: .52rem .72rem;
+  color: rgba(241,234,223,.76);
+  font-size: .66rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.selected-works {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(.55rem, 1vw, .9rem);
+  margin: clamp(2rem, 4vw, 4rem) 0 clamp(1.4rem, 3vw, 3rem);
+}
+.selected-works .feature-card {
+  grid-column: span 2;
+  min-height: clamp(28rem, 42vw, 42rem);
+}
+.selected-works .feature-card:first-child,
+.selected-works .feature-card:nth-child(2) {
+  grid-column: span 3;
+  min-height: clamp(34rem, 48vw, 50rem);
+}
+.feature-card::after,
+.clip-card::after {
+  content: "click / watch";
+}
+.clip-card {
+  outline: none;
+}
+.clip-card:focus-visible {
+  border-color: rgba(255,106,42,.86);
+  box-shadow: 0 0 0 3px rgba(255,106,42,.22), 0 24px 70px rgba(0,0,0,.42);
+}
+.clip-card div {
+  gap: .35rem;
+}
+.clip-card strong,
+.portfolio-row .clip-card strong {
+  display: block;
+  max-width: 15rem;
+  color: rgba(241,234,223,.62);
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.portfolio-row .clip-card div {
+  min-height: 5.1rem;
+}
+
+.portfolio-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 clamp(2.4rem, 5vw, 5rem);
+  padding: 1rem 0;
+  border-block: 1px solid rgba(241,234,223,.16);
+  color: rgba(241,234,223,.72);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.portfolio-cta a {
+  color: var(--accent);
+}
+
+.works {
+  padding-top: clamp(3.2rem, 7vw, 6rem);
+}
+.about-intro {
+  border-top: 1px solid rgba(241,234,223,.14);
+}
+.cinema-interlude {
+  min-height: clamp(24rem, 54vw, 38rem);
+}
+.direction-panel .cinema-interlude {
+  margin-block: clamp(2.5rem, 5vw, 4rem);
+}
+.scroll-wordmark {
+  opacity: .08;
+}
+
+.video-modal {
+  width: min(94vw, 82rem);
+  max-width: 82rem;
+  padding: 0;
+  border: 1px solid rgba(241,234,223,.18);
+  background: rgba(8,8,7,.96);
+  color: var(--text);
+  box-shadow: 0 30px 120px rgba(0,0,0,.76);
+}
+.video-modal::backdrop {
+  background: rgba(3,3,3,.78);
+  backdrop-filter: blur(14px);
+}
+.modal-close {
+  position: absolute;
+  top: .8rem;
+  right: .8rem;
+  z-index: 3;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(241,234,223,.2);
+  border-radius: 50%;
+  background: rgba(11,11,10,.72);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.modal-frame {
+  background: #050504;
+}
+.modal-video {
+  display: block;
+  width: 100%;
+  max-height: 76vh;
+  background: #050504;
+}
+.modal-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .4rem 1rem;
+  align-items: end;
+  padding: 1rem clamp(1rem, 2vw, 1.4rem) 1.15rem;
+  border-top: 1px solid rgba(241,234,223,.12);
+}
+.modal-kicker {
+  grid-column: 1 / -1;
+  color: var(--accent);
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.modal-caption h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.4vw, 2.2rem);
+  letter-spacing: -.055em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.modal-caption p {
+  margin: 0;
+  max-width: 30rem;
+  color: rgba(241,234,223,.62);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  line-height: 1.35;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1020px) {
+  .selected-works { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .selected-works .feature-card,
+  .selected-works .feature-card:first-child,
+  .selected-works .feature-card:nth-child(2) {
+    grid-column: span 1;
+    min-height: clamp(28rem, 68vw, 40rem);
+  }
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: clamp(2.35rem, 10.8vw, 2.9rem);
+    letter-spacing: -.055em;
+  }
+  .quick-contact {
+    left: auto;
+    right: 1rem;
+    bottom: .8rem;
+    width: min(10.8rem, calc(100vw - 2rem));
+    min-height: 2.45rem;
+    padding-inline: .75rem;
+    font-size: .6rem;
+  }
+  .film-hud {
+    display: none;
+  }
+  .hero-proof span {
+    flex: 1 1 100%;
+  }
+  .selected-works {
+    grid-template-columns: 1fr;
+  }
+  .selected-works .feature-card,
+  .selected-works .feature-card:first-child,
+  .selected-works .feature-card:nth-child(2) {
+    min-height: 30rem;
+  }
+  .portfolio-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .clip-card::after,
+  .feature-card::after {
+    content: "tap / watch";
+  }
+  .modal-caption {
+    grid-template-columns: 1fr;
+  }
+  .modal-caption p {
+    text-align: left;
+  }
+  .footer {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Final layer cleanup: keep motion crisp so work is readable immediately. */
+.reveal,
+.clip-card.reveal {
+  filter: none !important;
+  transform: translateY(18px);
+  transition:
+    opacity .48s cubic-bezier(.2,.8,.2,1),
+    transform .48s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.visible,
+.clip-card.reveal.visible {
+  filter: none !important;
+  transform: translateY(0);
+}
