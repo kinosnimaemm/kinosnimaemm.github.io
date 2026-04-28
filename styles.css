@@ -47,14 +47,15 @@ button { font: inherit; }
 }
 .cursor-light {
   position: fixed;
-  width: 28rem;
-  height: 28rem;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255,106,42,.16), transparent 66%);
-  transform: translate(-50%, -50%);
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,106,42,.13), transparent 62%);
+  transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
   z-index: -1;
-  left: 50%; top: 50%;
+  left: 0; top: 0;
+  will-change: transform;
 }
 
 .site-header {
@@ -1720,41 +1721,14 @@ h2::selection { background: var(--accent); color: #130d08; }
   .direction-head em { grid-column: auto; }
 }
 
-/* Hero refinement: showreel/editor identity with orange hover field. */
+/* Hero title hover: local orange text reveal around the pointer. */
 .hero-title {
   position: relative;
   width: fit-content;
   max-width: 100%;
   cursor: crosshair;
-}
-.hero-title::before {
-  content: "";
-  position: absolute;
-  inset: -.12em -.08em;
-  z-index: -1;
-  background:
-    radial-gradient(circle at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.42), transparent 28%),
-    linear-gradient(90deg, rgba(255,106,42,.16), transparent 72%);
-  opacity: 0;
-  transform: scale(.985);
-  transition: opacity .32s ease, transform .32s ease;
-  pointer-events: none;
-}
-.hero-title:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
-.hero-title span,
-.hero-title em {
-  transition: color .32s ease, text-shadow .32s ease, -webkit-text-stroke-color .32s ease;
-}
-.hero-title:hover span {
-  color: var(--accent);
-  text-shadow: 0 0 34px rgba(255,106,42,.24);
-}
-.hero-title:hover em {
-  color: rgba(255,106,42,.95);
-  text-shadow: 0 0 30px rgba(255,106,42,.18);
+  isolation: isolate;
+  --title-mask-size: clamp(8.5rem, 18vw, 15rem);
 }
 .about-intro {
   display: grid;
@@ -1794,45 +1768,20 @@ h2::selection { background: var(--accent); color: #130d08; }
   .intro-facts { grid-template-columns: 1fr; }
 }
 
-/* Refined hero hover: local orange light only around cursor, no rectangular plate. */
-.hero-title {
-  isolation: isolate;
-}
-.hero-title::before {
-  inset: -24% -14%;
-  z-index: 0;
-  background:
-    radial-gradient(20rem 14rem at var(--title-x, 50%) var(--title-y, 50%), rgba(255,106,42,.50) 0%, rgba(255,106,42,.25) 22%, rgba(255,106,42,.09) 45%, transparent 72%),
-    radial-gradient(14rem 10rem at var(--title-x, 50%) var(--title-y, 50%), rgba(255,188,102,.22) 0%, transparent 68%);
-  opacity: 0;
-  transform: none;
-  filter: blur(8px);
-  mix-blend-mode: screen;
-  transition: opacity .26s ease;
-}
-.hero-title:hover::before {
-  opacity: 1;
-  transform: none;
-}
 .hero-title span,
 .hero-title em {
   position: relative;
   z-index: 1;
+  transition: text-shadow .28s ease;
 }
 .hero-title span {
   display: block;
 }
-.hero-title:hover span {
-  color: var(--text);
-  text-shadow:
-    0 0 22px rgba(255,106,42,.16),
-    0 0 48px rgba(255,106,42,.10);
-}
+.hero-title:hover span,
 .hero-title:hover em {
-  color: rgba(241,234,223,.94);
   text-shadow:
-    0 0 20px rgba(255,106,42,.20),
-    0 0 46px rgba(255,106,42,.10);
+    0 0 18px rgba(255,106,42,.18),
+    0 0 42px rgba(255,106,42,.10);
 }
 .hero-title span::after,
 .hero-title em::after {
@@ -1842,16 +1791,17 @@ h2::selection { background: var(--accent); color: #130d08; }
   color: #ff7436;
   opacity: 0;
   pointer-events: none;
+  transform: translateZ(0);
   text-shadow:
-    0 0 10px rgba(255,116,54,.34),
-    0 0 34px rgba(255,106,42,.24);
-  -webkit-mask-image: radial-gradient(circle 12rem at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0%, #000 28%, rgba(0,0,0,.72) 44%, transparent 72%);
-  mask-image: radial-gradient(circle 12rem at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0%, #000 28%, rgba(0,0,0,.72) 44%, transparent 72%);
+    0 0 8px rgba(255,116,54,.28),
+    0 0 26px rgba(255,106,42,.18);
+  -webkit-mask-image: radial-gradient(circle var(--title-mask-size) at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0 30%, rgba(0,0,0,.66) 48%, transparent 72%);
+  mask-image: radial-gradient(circle var(--title-mask-size) at var(--title-local-x, 50%) var(--title-local-y, 50%), #000 0 30%, rgba(0,0,0,.66) 48%, transparent 72%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-  transition: opacity .16s ease;
+  transition: opacity .18s ease;
 }
 .hero-title:hover span::after,
 .hero-title:hover em::after {

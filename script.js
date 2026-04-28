@@ -86,15 +86,22 @@ const translations = {
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
   const titleLayers = heroTitle.querySelectorAll('span, em');
+  let titleFrame = null;
+  let titlePointerEvent = null;
   const updateTitleHoverPosition = (event) => {
-    const rect = heroTitle.getBoundingClientRect();
-    heroTitle.style.setProperty('--title-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-    heroTitle.style.setProperty('--title-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+    titlePointerEvent = event;
+    if (titleFrame) return;
 
-    titleLayers.forEach((layer) => {
-      const layerRect = layer.getBoundingClientRect();
-      layer.style.setProperty('--title-local-x', `${event.clientX - layerRect.left}px`);
-      layer.style.setProperty('--title-local-y', `${event.clientY - layerRect.top}px`);
+    titleFrame = requestAnimationFrame(() => {
+      const pointer = titlePointerEvent;
+      titleFrame = null;
+      if (!pointer) return;
+
+      titleLayers.forEach((layer) => {
+        const layerRect = layer.getBoundingClientRect();
+        layer.style.setProperty('--title-local-x', `${pointer.clientX - layerRect.left}px`);
+        layer.style.setProperty('--title-local-y', `${pointer.clientY - layerRect.top}px`);
+      });
     });
   };
 
@@ -195,10 +202,22 @@ ambientVideos.forEach((video) => {
 });
 
 const cursorLight = document.querySelector('.cursor-light');
-window.addEventListener('pointermove', (event) => {
-  cursorLight.style.left = `${event.clientX}px`;
-  cursorLight.style.top = `${event.clientY}px`;
-});
+if (cursorLight) {
+  let cursorFrame = null;
+  let cursorX = window.innerWidth / 2;
+  let cursorY = window.innerHeight / 2;
+
+  window.addEventListener('pointermove', (event) => {
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    if (cursorFrame) return;
+
+    cursorFrame = requestAnimationFrame(() => {
+      cursorLight.style.transform = `translate3d(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%), 0)`;
+      cursorFrame = null;
+    });
+  });
+}
 
 
 const progressFill = document.querySelector('.scroll-progress span');
