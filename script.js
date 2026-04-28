@@ -167,13 +167,19 @@ const openVideoModal = (card) => {
   const src = source?.dataset.src || source?.src;
   if (!videoModal || !modalVideo || !src) return;
 
+  modalVideo.pause();
+  modalVideo.muted = false;
+  modalVideo.defaultMuted = false;
+  modalVideo.volume = 1;
   modalVideo.src = src;
   modalVideo.poster = cardVideo.poster || '';
   modalTitle.textContent = card.dataset.title || card.querySelector('span')?.textContent || 'Selected work';
   modalMeta.textContent = [card.dataset.role, card.dataset.format].filter(Boolean).join(' / ');
   document.body.classList.add('modal-open');
   videoModal.showModal();
-  modalVideo.play().catch(() => {});
+  modalVideo.play().catch(() => {
+    modalVideo.controls = true;
+  });
 };
 
 modalClose?.addEventListener('click', closeVideoModal);
