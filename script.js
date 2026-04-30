@@ -25,6 +25,17 @@ const translations = {
     processBrief: 'цель, стиль, площадка', processShoot: 'DOP, свет, движение', processEdit: 'ритм, звук, графика', processDelivery: 'финальные версии под платформы',
     contactTitle: 'Если визуал откликается — напишите мне напрямую.',
     filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    proofFastTitle: 'Fast client scan', proofFastText: 'Сайт ведет сразу к showreel и работам: клиент видит уровень без лишних объяснений.',
+    proofCycleTitle: 'Full-cycle thinking', proofCycleText: 'Съемка, монтаж, цвет, звук, AI/motion и финальная упаковка под social или рекламу.',
+    proofGeoTitle: 'Germany based', proofGeoText: 'Работаю с локальными бизнесами, мастерами, events и digital-проектами по Германии и удаленно.',
+    casesTitle: 'Mini cases, not just clips', casesLead: 'Клиенту важно быстро понять не только картинку, но и задачу: что было нужно, что сделано и где ролик работает.',
+    caseTattooTitle: 'Показать мастера через процесс и атмосферу', caseTattooText: 'Съемка деталей, портрет, ритм монтажа и color, чтобы профиль выглядел как сильная визуальная визитка.',
+    caseBusinessTitle: 'Сделать услугу понятной и желанной', caseBusinessText: 'Барбершопы, beauty и локальные бренды получают короткие ролики, где видны руки, процесс, результат и настроение места.',
+    caseEditingTitle: 'Собрать готовый материал в рекламный темп', caseEditingText: 'Монтаж, звук, графика и pacing превращают исходники в короткий ролик для social, презентации или запуска.',
+    pathTitle: 'Понятный процесс без тяжелого продакшн-шума.', pathLead: 'Клиенту не нужно разбираться в технических деталях. Достаточно цели, референсов и площадки публикации — дальше я собираю визуальный путь до финального ролика.',
+    pathBriefTitle: 'Brief', pathBriefText: 'цель, аудитория, формат, дедлайн', pathShootTitle: 'Shoot / assets', pathShootText: 'съемка или разбор исходников',
+    pathEditTitle: 'Edit', pathEditText: 'ритм, звук, цвет, графика', pathDeliverTitle: 'Delivery', pathDeliverText: 'версии под reels, ads, YouTube или сайт',
+    availabilityA: 'Available in Germany', availabilityB: 'Remote editing worldwide', availabilityC: 'Fast social cuts on request',
     contactText: 'kinosnimaemm — video editing и full production в Германии. Ссылки ниже, без лишней формы и продажного шума.',
     modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram'
   },
@@ -54,6 +65,17 @@ const translations = {
     processBrief: 'goal, style, location', processShoot: 'DOP, light, movement', processEdit: 'rhythm, sound, graphics', processDelivery: 'final versions for platforms',
     contactTitle: 'If the visual speaks to you — message me directly.',
     filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    proofFastTitle: 'Fast client scan', proofFastText: 'The site moves straight to the showreel and work, so clients see the level without extra explanation.',
+    proofCycleTitle: 'Full-cycle thinking', proofCycleText: 'Shooting, editing, color, sound, AI/motion and final packaging for social or advertising.',
+    proofGeoTitle: 'Germany based', proofGeoText: 'Working with local businesses, artists, events and digital projects across Germany and remotely.',
+    casesTitle: 'Mini cases, not just clips', casesLead: 'Clients need to understand the image and the job: what was needed, what was done and where the video works.',
+    caseTattooTitle: 'Show the artist through process and atmosphere', caseTattooText: 'Detail shots, portrait, editing rhythm and color so the profile feels like a strong visual card.',
+    caseBusinessTitle: 'Make the service clear and desirable', caseBusinessText: 'Barbershops, beauty and local brands get short videos that show hands, process, result and the mood of the place.',
+    caseEditingTitle: 'Turn existing footage into ad tempo', caseEditingText: 'Editing, sound, graphics and pacing shape raw material into a short video for social, presentations or launches.',
+    pathTitle: 'A clear process without heavy production noise.', pathLead: 'Clients do not need to manage technical details. Goal, references and publishing platform are enough; I build the visual path to delivery.',
+    pathBriefTitle: 'Brief', pathBriefText: 'goal, audience, format, deadline', pathShootTitle: 'Shoot / assets', pathShootText: 'shooting or source material review',
+    pathEditTitle: 'Edit', pathEditText: 'rhythm, sound, color, graphics', pathDeliverTitle: 'Delivery', pathDeliverText: 'versions for reels, ads, YouTube or website',
+    availabilityA: 'Available in Germany', availabilityB: 'Remote editing worldwide', availabilityC: 'Fast social cuts on request',
     contactText: 'kinosnimaemm — video editing and full production in Germany. Links below, no extra form and no sales noise.',
     modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram'
   },
@@ -83,6 +105,17 @@ const translations = {
     processBrief: 'Ziel, Stil, Location', processShoot: 'DOP, Licht, Bewegung', processEdit: 'Rhythmus, Sound, Grafik', processDelivery: 'finale Versionen für Plattformen',
     contactTitle: 'Wenn dich der Visual Style anspricht — schreib mir direkt.',
     filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    proofFastTitle: 'Fast client scan', proofFastText: 'Die Seite führt direkt zum Showreel und zu den Arbeiten, damit Kunden das Level ohne Umwege sehen.',
+    proofCycleTitle: 'Full-cycle thinking', proofCycleText: 'Dreh, Schnitt, Color, Sound, AI/Motion und finales Packaging für Social oder Werbung.',
+    proofGeoTitle: 'Germany based', proofGeoText: 'Ich arbeite mit lokalen Businesses, Artists, Events und Digital-Projekten in Deutschland und remote.',
+    casesTitle: 'Mini cases, not just clips', casesLead: 'Kunden sollen schnell Bild und Aufgabe verstehen: was gebraucht wurde, was gemacht wurde und wo das Video funktioniert.',
+    caseTattooTitle: 'Den Artist über Prozess und Atmosphäre zeigen', caseTattooText: 'Details, Portrait, Editing-Rhythmus und Color, damit das Profil wie eine starke visuelle Karte wirkt.',
+    caseBusinessTitle: 'Die Leistung klar und begehrlich machen', caseBusinessText: 'Barbershops, Beauty und lokale Brands bekommen kurze Videos mit Händen, Prozess, Ergebnis und Mood des Ortes.',
+    caseEditingTitle: 'Vorhandenes Material in Werbetempo bringen', caseEditingText: 'Schnitt, Sound, Grafik und Pacing machen aus Rohmaterial ein kurzes Video für Social, Präsentation oder Launch.',
+    pathTitle: 'Ein klarer Prozess ohne schweren Produktionslärm.', pathLead: 'Kunden müssen keine technischen Details steuern. Ziel, Referenzen und Plattform reichen; ich baue den visuellen Weg bis zur Delivery.',
+    pathBriefTitle: 'Brief', pathBriefText: 'Ziel, Zielgruppe, Format, Deadline', pathShootTitle: 'Shoot / assets', pathShootText: 'Dreh oder Sichtung des Materials',
+    pathEditTitle: 'Edit', pathEditText: 'Rhythmus, Sound, Color, Grafik', pathDeliverTitle: 'Delivery', pathDeliverText: 'Versionen für Reels, Ads, YouTube oder Website',
+    availabilityA: 'Available in Germany', availabilityB: 'Remote editing worldwide', availabilityC: 'Fast social cuts on request',
     contactText: 'kinosnimaemm — video editing und full production in Deutschland. Links unten, ohne extra Formular und ohne Sales-Lärm.',
     modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben'
   }
@@ -314,13 +347,34 @@ clipCards.forEach((card) => {
 });
 
 const filterButtons = document.querySelectorAll('[data-filter]');
-const selectedCards = document.querySelectorAll('.selected-works .clip-card');
+const portfolioCards = document.querySelectorAll('.works .clip-card');
+const getCardCategories = (card) => {
+  const explicit = card.dataset.category;
+  if (explicit) return explicit.split(/\s+/).filter(Boolean);
+
+  const haystack = [
+    card.dataset.title,
+    card.dataset.role,
+    card.dataset.format,
+    card.textContent
+  ].filter(Boolean).join(' ').toLowerCase();
+
+  const categories = new Set();
+  if (/edit|motion|ai|ad|commercial|poster|product|fashion|event/.test(haystack)) categories.add('editing');
+  if (/shoot|dop|production|process|portrait|beauty|barber|tattoo/.test(haystack)) categories.add('production');
+  if (/tattoo/.test(haystack)) categories.add('tattoo');
+  if (/beauty|lash/.test(haystack)) categories.add('beauty');
+  if (/barber|business|local|expert|product|fashion|event|commercial/.test(haystack)) categories.add('business');
+  return [...categories];
+};
+
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
     filterButtons.forEach((node) => node.classList.toggle('active', node === button));
-    selectedCards.forEach((card) => {
-      const categories = (card.dataset.category || '').split(/\s+/);
+    document.querySelector('.works')?.classList.toggle('is-filtered', filter !== 'all');
+    portfolioCards.forEach((card) => {
+      const categories = getCardCategories(card);
       const visible = filter === 'all' || categories.includes(filter);
       card.toggleAttribute('hidden', !visible);
     });
@@ -362,12 +416,13 @@ ambientVideos.forEach((video) => {
 const progressFill = document.querySelector('.scroll-progress span');
 const hudIndex = document.querySelector('.hud-index');
 const hudLabel = document.querySelector('.hud-label');
-const sceneSections = [...document.querySelectorAll('.hero, .about-intro, .direction-panel, .cinema-interlude, .contact')];
+const sceneSections = [...document.querySelectorAll('.hero, .about-intro, .direction-panel, .cinema-interlude, .client-path, .contact')];
 let ticking = false;
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 const getSceneLabel = (section) => {
   if (section.classList.contains('hero')) return 'opening frame';
+  if (section.classList.contains('client-path')) return 'client path';
   if (section.classList.contains('contact')) return 'contact / booking';
   const heading = section.querySelector('h3, h2');
   return heading ? heading.textContent.trim() : 'portfolio scene';
