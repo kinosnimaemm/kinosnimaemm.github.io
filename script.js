@@ -3,7 +3,7 @@ const translations = {
     navWork: 'Работы', navAbout: 'Обо мне', navServices: 'Услуги', navContact: 'Контакт',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'съемка, ритм и cinematic cut.',
     heroCopy: 'kinosnimaemm — визуальная визитка Андрея Гевича: video editing, DOP, съемка, motion design и AI-визуалы для брендов, мастеров, событий и digital-контента.',
-    heroCtaWork: 'Смотреть работы', heroCtaContact: 'Обсудить проект',
+    quickContact: 'Book / Telegram', heroCtaShowreel: 'Смотреть showreel со звуком', heroCtaWork: 'Работы', heroCtaContact: 'Обсудить проект',
     introText: 'Я базируюсь в Германии и работаю как freelance video editor / DOP по Европе и worldwide. 5+ лет в продакшне: монтаж, съемка, color, motion design, AI-визуалы и полный цикл контента — от идеи до финального cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'Это не каталог услуг, а визуальная визитка: уровень монтажа, съемки, ритма и картинки. Два направления — монтаж готового материала и полный продакшн от идеи до финального ролика.',
@@ -24,13 +24,15 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI-визуалы, motion-переходы и концептные ролики для необычной подачи.',
     processBrief: 'цель, стиль, площадка', processShoot: 'DOP, свет, движение', processEdit: 'ритм, звук, графика', processDelivery: 'финальные версии под платформы',
     contactTitle: 'Если визуал откликается — напишите мне напрямую.',
-    contactText: 'kinosnimaemm — video editing и full production в Германии. Ссылки ниже, без лишней формы и продажного шума.'
+    filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    contactText: 'kinosnimaemm — video editing и full production в Германии. Ссылки ниже, без лишней формы и продажного шума.',
+    modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram'
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'shooting, rhythm and cinematic cut.',
     heroCopy: 'kinosnimaemm is Andrii Hevich’s visual card: video editing, DOP, shooting, motion design and AI visuals for brands, artists, events and digital content.',
-    heroCtaWork: 'View works', heroCtaContact: 'Discuss a project',
+    quickContact: 'Book / Telegram', heroCtaShowreel: 'Play showreel with sound', heroCtaWork: 'Works', heroCtaContact: 'Discuss a project',
     introText: 'I am based in Germany and work as a freelance video editor / DOP across Europe and worldwide. 5+ years in production: editing, shooting, color, motion design, AI visuals and full-cycle content — from idea to final cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'This is not a service catalogue — it is a visual card: editing level, shooting level, rhythm and image. Two directions: editing existing footage and full production from idea to final cut.',
@@ -51,13 +53,15 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI visuals, motion transitions and concept videos for an unusual presentation.',
     processBrief: 'goal, style, location', processShoot: 'DOP, light, movement', processEdit: 'rhythm, sound, graphics', processDelivery: 'final versions for platforms',
     contactTitle: 'If the visual speaks to you — message me directly.',
-    contactText: 'kinosnimaemm — video editing and full production in Germany. Links below, no extra form and no sales noise.'
+    filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    contactText: 'kinosnimaemm — video editing and full production in Germany. Links below, no extra form and no sales noise.',
+    modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram'
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'Dreh, Rhythmus und cinematic cut.',
     heroCopy: 'kinosnimaemm ist die visuelle Karte von Andrii Hevich: Video Editing, DOP, Dreh, Motion Design und AI Visuals für Brands, Artists, Events und Digital Content.',
-    heroCtaWork: 'Arbeiten ansehen', heroCtaContact: 'Projekt besprechen',
+    quickContact: 'Book / Telegram', heroCtaShowreel: 'Showreel mit Sound ansehen', heroCtaWork: 'Arbeiten', heroCtaContact: 'Projekt besprechen',
     introText: 'Ich bin in Deutschland basiert und arbeite als freelance video editor / DOP in Europa und worldwide. 5+ Jahre Produktion: Schnitt, Dreh, Color, Motion Design, AI Visuals und Full-Cycle Content — von Idee bis Final Cut.',
     worksTitle: 'Video Editing & Full Production',
     worksLead: 'Das ist kein Service-Katalog, sondern eine visuelle Visitenkarte: Schnitt, Dreh, Rhythmus und Bildgefühl. Zwei Richtungen: Schnitt von vorhandenem Material und Full Production von Idee bis Final Cut.',
@@ -78,7 +82,9 @@ const translations = {
     serviceAiTitle: 'AI / motion', serviceAiText: 'AI Visuals, Motion-Transitions und Konzeptvideos für ungewöhnliche Präsentation.',
     processBrief: 'Ziel, Stil, Location', processShoot: 'DOP, Licht, Bewegung', processEdit: 'Rhythmus, Sound, Grafik', processDelivery: 'finale Versionen für Plattformen',
     contactTitle: 'Wenn dich der Visual Style anspricht — schreib mir direkt.',
-    contactText: 'kinosnimaemm — video editing und full production in Deutschland. Links unten, ohne extra Formular und ohne Sales-Lärm.'
+    filterAll: 'All', filterEditing: 'Editing', filterProduction: 'Full production', filterTattoo: 'Tattoo', filterBeauty: 'Beauty', filterBusiness: 'Local business',
+    contactText: 'kinosnimaemm — video editing und full production in Deutschland. Links unten, ohne extra Formular und ohne Sales-Lärm.',
+    modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben'
   }
 };
 
@@ -114,10 +120,18 @@ const setLanguage = (lang) => {
   document.querySelectorAll('[data-i18n]').forEach((node) => {
     const key = node.dataset.i18n;
     if (translations[lang][key]) {
-      node.textContent = translations[lang][key];
-      if (node.closest('.hero-title')) node.setAttribute('data-hover-text', translations[lang][key]);
+      if (node.closest('.hero-title')) {
+        node.querySelectorAll('.title-base, .title-accent').forEach((layer) => {
+          layer.textContent = translations[lang][key];
+        });
+      } else {
+        node.textContent = translations[lang][key];
+      }
     }
   });
+  if (heroTitle) {
+    heroTitle.setAttribute('aria-label', `${translations[lang].heroTitleA} ${translations[lang].heroTitleB}`);
+  }
   document.querySelectorAll('[data-lang]').forEach((button) => {
     button.classList.toggle('active', button.dataset.lang === lang);
   });
@@ -151,38 +165,112 @@ const modalVideo = document.querySelector('.modal-video');
 const modalTitle = document.querySelector('.modal-caption h3');
 const modalMeta = document.querySelector('.modal-caption p');
 const modalClose = document.querySelector('.modal-close');
+const modalCount = document.querySelector('.modal-count');
+const modalPrev = document.querySelector('.modal-prev');
+const modalNext = document.querySelector('.modal-next');
+const modalEndCta = document.querySelector('.modal-end-cta');
+const showreelButton = document.querySelector('[data-showreel]');
+let currentVideoIndex = -1;
+
+const showreelItem = {
+  title: 'Main Showreel',
+  role: 'Showreel / shooting / editing / sound',
+  format: '50 sec portfolio opener',
+  src: 'assets/video/main-hero-showreel-horizontal.mp4',
+  poster: 'assets/posters/hero-full-frame.mp4.jpg'
+};
+
+const getVideoSource = (video) => {
+  const source = video?.querySelector('source');
+  return source?.dataset.fullSrc || source?.dataset.src || source?.getAttribute('src') || source?.src || '';
+};
+
+const itemFromCard = (card) => {
+  const cardVideo = card.querySelector('video');
+  return {
+    card,
+    title: card.dataset.title || card.querySelector('span')?.textContent || 'Selected work',
+    role: card.dataset.role || '',
+    format: card.dataset.format || '',
+    src: getVideoSource(cardVideo),
+    poster: cardVideo?.poster || ''
+  };
+};
+
+const buildPlaylist = () => {
+  const uniqueItems = new Map([[showreelItem.src, showreelItem]]);
+  document.querySelectorAll('.clip-card').forEach((card) => {
+    const item = itemFromCard(card);
+    if (item.src && !uniqueItems.has(item.src)) uniqueItems.set(item.src, item);
+  });
+  return [...uniqueItems.values()];
+};
+
+const getPlaylist = () => buildPlaylist();
+
+const setModalNavigationState = (playlist) => {
+  if (modalCount) {
+    modalCount.textContent = `${String(currentVideoIndex + 1).padStart(2, '0')} / ${String(playlist.length).padStart(2, '0')}`;
+  }
+  const hasMany = playlist.length > 1;
+  modalPrev?.toggleAttribute('hidden', !hasMany);
+  modalNext?.toggleAttribute('hidden', !hasMany);
+};
 
 const closeVideoModal = () => {
   if (!videoModal || !modalVideo) return;
   modalVideo.pause();
   modalVideo.removeAttribute('src');
   modalVideo.load();
+  if (modalEndCta) modalEndCta.hidden = true;
+  currentVideoIndex = -1;
   videoModal.close();
   document.body.classList.remove('modal-open');
 };
 
-const openVideoModal = (card) => {
-  const cardVideo = card.querySelector('video');
-  const source = cardVideo?.querySelector('source');
-  const src = source?.dataset.src || source?.src;
+const openVideoModal = (target, options = {}) => {
+  const playlist = getPlaylist();
+  const item = target?.src ? target : itemFromCard(target);
+  const src = item?.src;
   if (!videoModal || !modalVideo || !src) return;
+
+  const playlistIndex = playlist.findIndex((playlistItem) => playlistItem.src === src);
+  currentVideoIndex = playlistIndex >= 0 ? playlistIndex : 0;
+  const activeItem = playlist[currentVideoIndex] || item;
 
   modalVideo.pause();
   modalVideo.muted = false;
   modalVideo.defaultMuted = false;
   modalVideo.volume = 1;
-  modalVideo.src = src;
-  modalVideo.poster = cardVideo.poster || '';
-  modalTitle.textContent = card.dataset.title || card.querySelector('span')?.textContent || 'Selected work';
-  modalMeta.textContent = [card.dataset.role, card.dataset.format].filter(Boolean).join(' / ');
+  modalVideo.src = activeItem.src;
+  modalVideo.poster = activeItem.poster || '';
+  modalTitle.textContent = activeItem.title;
+  modalMeta.textContent = [activeItem.role, activeItem.format].filter(Boolean).join(' / ');
+  if (modalEndCta) modalEndCta.hidden = true;
+  setModalNavigationState(playlist);
   document.body.classList.add('modal-open');
-  videoModal.showModal();
+  if (!videoModal.open) videoModal.showModal();
   modalVideo.play().catch(() => {
     modalVideo.controls = true;
   });
+
+  if (options.scrollToWorks) document.querySelector('#works')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+const openPlaylistOffset = (offset) => {
+  const playlist = getPlaylist();
+  if (!playlist.length || currentVideoIndex < 0) return;
+  const nextIndex = (currentVideoIndex + offset + playlist.length) % playlist.length;
+  openVideoModal(playlist[nextIndex]);
 };
 
 modalClose?.addEventListener('click', closeVideoModal);
+modalPrev?.addEventListener('click', () => openPlaylistOffset(-1));
+modalNext?.addEventListener('click', () => openPlaylistOffset(1));
+modalVideo?.addEventListener('ended', () => {
+  if (modalEndCta) modalEndCta.hidden = false;
+});
+showreelButton?.addEventListener('click', () => openVideoModal(showreelItem));
 videoModal?.addEventListener('click', (event) => {
   if (event.target === videoModal) closeVideoModal();
 });
@@ -225,15 +313,19 @@ clipCards.forEach((card) => {
   });
 });
 
-const preloadObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    prepareVideo(entry.target.querySelector('video'));
-    preloadObserver.unobserve(entry.target);
+const filterButtons = document.querySelectorAll('[data-filter]');
+const selectedCards = document.querySelectorAll('.selected-works .clip-card');
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach((node) => node.classList.toggle('active', node === button));
+    selectedCards.forEach((card) => {
+      const categories = (card.dataset.category || '').split(/\s+/);
+      const visible = filter === 'all' || categories.includes(filter);
+      card.toggleAttribute('hidden', !visible);
+    });
   });
-}, { rootMargin: '360px 0px', threshold: 0.01 });
-
-clipCards.forEach((card) => preloadObserver.observe(card));
+});
 
 const playbackObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

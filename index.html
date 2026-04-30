@@ -34,7 +34,7 @@
       <span class="hud-label">opening frame</span>
     </div>
     <div class="scroll-wordmark" aria-hidden="true">KINOSNIMAEMM</div>
-    <a class="quick-contact" href="https://t.me/youmee_to" target="_blank" rel="noopener">Book / Telegram</a>
+    <a class="quick-contact" href="https://t.me/youmee_to" target="_blank" rel="noopener" data-i18n="quickContact">Book / Telegram</a>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="kinosnimaemm home">
@@ -61,9 +61,9 @@
         <div class="hero-frame" aria-hidden="true"></div>
         <div class="hero-content reveal">
           <p class="eyebrow">Andrii Hevich / Germany freelance production</p>
-          <h1 class="hero-title">
-            <span data-i18n="heroTitleA">Showreel / монтаж</span>
-            <em data-i18n="heroTitleB">съемка, ритм и cinematic cut.</em>
+          <h1 class="hero-title" aria-label="SHOWREEL / EDITING съемка, ритм и cinematic cut.">
+            <span data-i18n="heroTitleA"><span class="title-base">Showreel / монтаж</span><span class="title-accent" aria-hidden="true">Showreel / монтаж</span></span>
+            <em data-i18n="heroTitleB"><span class="title-base">съемка, ритм и cinematic cut.</span><span class="title-accent" aria-hidden="true">съемка, ритм и cinematic cut.</span></em>
           </h1>
           <p class="hero-copy" data-i18n="heroCopy">kinosnimaemm — визуальная визитка Андрея Гевича: video editing, DOP, съемка, motion design и AI-визуалы для брендов, мастеров, событий и digital-контента.</p>
           <div class="hero-proof" aria-label="Professional proof">
@@ -72,7 +72,8 @@
             <span>Shoot / edit / color</span>
           </div>
           <div class="hero-actions">
-            <a class="button primary" href="#works" data-i18n="heroCtaWork">Смотреть работы</a>
+            <button class="button primary" type="button" data-showreel data-i18n="heroCtaShowreel">Смотреть showreel со звуком</button>
+            <a class="button ghost" href="#works" data-i18n="heroCtaWork">Работы</a>
             <a class="button ghost" href="#contact" data-i18n="heroCtaContact">Обсудить проект</a>
           </div>
         </div>
@@ -98,29 +99,38 @@
           <p data-i18n="worksLead">Это не каталог услуг, а визуальная визитка: уровень монтажа, съемки, ритма и картинки. Два направления — монтаж готового материала и полный продакшн от идеи до финального ролика.</p>
         </div>
 
+        <div class="work-filters reveal" aria-label="Portfolio filters">
+          <button class="active" type="button" data-filter="all" data-i18n="filterAll">All</button>
+          <button type="button" data-filter="editing" data-i18n="filterEditing">Editing</button>
+          <button type="button" data-filter="production" data-i18n="filterProduction">Full production</button>
+          <button type="button" data-filter="tattoo" data-i18n="filterTattoo">Tattoo</button>
+          <button type="button" data-filter="beauty" data-i18n="filterBeauty">Beauty</button>
+          <button type="button" data-filter="business" data-i18n="filterBusiness">Local business</button>
+        </div>
+
         <div class="selected-works" aria-label="Selected work">
-          <article class="clip-card feature-card reveal" data-hover="click / watch" data-title="Tattoo Artist Showreel" data-role="Shoot / edit / color" data-format="Reels / portfolio hero">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-showreel.mp4.jpg"><source data-src="assets/video/tattoo-showreel.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal" data-category="production tattoo" data-hover="watch with sound" data-title="Tattoo Artist Showreel" data-role="Shoot / edit / color" data-format="Reels / portfolio hero">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/tattoo-showreel.mp4.jpg"><source data-src="assets/previews/tattoo-showreel.mp4" data-full-src="assets/video/tattoo-showreel.mp4" type="video/mp4" /></video>
             <div><span>Tattoo Artist Showreel</span><strong>Shoot / edit / color</strong></div>
           </article>
-          <article class="clip-card feature-card reveal delay-1" data-hover="click / watch" data-title="Expert Social Ad" data-role="Editing / pacing / post" data-format="Commercial short-form">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/adv-profi-speaker.mp4.jpg"><source data-src="assets/video/adv-profi-speaker.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal delay-1" data-category="editing business" data-hover="watch with sound" data-title="Expert Social Ad" data-role="Editing / pacing / post" data-format="Commercial short-form">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/adv-profi-speaker.mp4.jpg"><source data-src="assets/previews/adv-profi-speaker.mp4" data-full-src="assets/video/adv-profi-speaker.mp4" type="video/mp4" /></video>
             <div><span>Expert Social Ad</span><strong>Editing / pacing / post</strong></div>
           </article>
-          <article class="clip-card feature-card reveal delay-2" data-hover="click / watch" data-title="Barbershop Visuals" data-role="Shoot / edit / atmosphere" data-format="Reels / local business">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/barber-01-vertical.mp4.jpg"><source data-src="assets/video/barber-01-vertical.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal delay-2" data-category="production business" data-hover="watch with sound" data-title="Barbershop Visuals" data-role="Shoot / edit / atmosphere" data-format="Reels / local business">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/barber-01-vertical.mp4.jpg"><source data-src="assets/previews/barber-01-vertical.mp4" data-full-src="assets/video/barber-01-vertical.mp4" type="video/mp4" /></video>
             <div><span>Barbershop Visuals</span><strong>Shoot / edit / atmosphere</strong></div>
           </article>
-          <article class="clip-card feature-card reveal" data-hover="click / watch" data-title="AI Motion Transition" data-role="Edit / AI visual / motion" data-format="Concept social video">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/ai-transition.mp4.jpg"><source data-src="assets/video/ai-transition.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal" data-category="editing" data-hover="watch with sound" data-title="AI Motion Transition" data-role="Edit / AI visual / motion" data-format="Concept social video">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/ai-transition.mp4.jpg"><source data-src="assets/previews/ai-transition.mp4" data-full-src="assets/video/ai-transition.mp4" type="video/mp4" /></video>
             <div><span>AI Motion Transition</span><strong>Edit / AI visual / motion</strong></div>
           </article>
-          <article class="clip-card feature-card reveal delay-1" data-hover="click / watch" data-title="Beauty Detail Reel" data-role="Shoot / edit / clean mood" data-format="Beauty service reel">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/lashes-01.mp4.jpg"><source data-src="assets/video/lashes-01.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal delay-1" data-category="production beauty" data-hover="watch with sound" data-title="Beauty Detail Reel" data-role="Shoot / edit / clean mood" data-format="Beauty service reel">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/lashes-01.mp4.jpg"><source data-src="assets/previews/lashes-01.mp4" data-full-src="assets/video/lashes-01.mp4" type="video/mp4" /></video>
             <div><span>Beauty Detail Reel</span><strong>Shoot / edit / clean mood</strong></div>
           </article>
-          <article class="clip-card feature-card reveal delay-2" data-hover="click / watch" data-title="Event Motion Poster" data-role="Editing / motion / sound feel" data-format="Event promo">
-            <video muted loop playsinline preload="metadata" poster="assets/posters/event-halloween.mp4.jpg"><source data-src="assets/video/event-halloween.mp4" type="video/mp4" /></video>
+          <article class="clip-card feature-card reveal delay-2" data-category="editing business" data-hover="watch with sound" data-title="Event Motion Poster" data-role="Editing / motion / sound feel" data-format="Event promo">
+            <video muted loop playsinline preload="metadata" poster="assets/posters/event-halloween.mp4.jpg"><source data-src="assets/previews/event-halloween.mp4" data-full-src="assets/video/event-halloween.mp4" type="video/mp4" /></video>
             <div><span>Event Motion Poster</span><strong>Editing / motion / sound feel</strong></div>
           </article>
         </div>
@@ -274,13 +284,24 @@
 
     <dialog class="video-modal" aria-label="Portfolio video player">
       <button class="modal-close" type="button" aria-label="Close video">x</button>
+      <div class="modal-topline">
+        <span class="modal-count">01 / 01</span>
+        <span class="modal-sound" data-i18n="modalSound">Sound on</span>
+      </div>
       <div class="modal-frame">
+        <button class="modal-nav modal-prev" type="button" aria-label="Previous video">Prev</button>
         <video class="modal-video" controls playsinline></video>
+        <button class="modal-nav modal-next" type="button" aria-label="Next video">Next</button>
       </div>
       <div class="modal-caption">
         <span class="modal-kicker">Selected work</span>
         <h3></h3>
         <p></p>
+        <a class="modal-cta" href="https://t.me/youmee_to" target="_blank" rel="noopener" data-i18n="modalCta">Discuss a video like this</a>
+      </div>
+      <div class="modal-end-cta" hidden>
+        <span data-i18n="modalEndTitle">Want this level for your brand?</span>
+        <a href="https://t.me/youmee_to" target="_blank" rel="noopener" data-i18n="modalEndLink">Message me on Telegram</a>
       </div>
     </dialog>
 
