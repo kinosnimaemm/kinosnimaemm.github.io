@@ -180,17 +180,34 @@ h1 em {
   font-size: .72rem;
 }
 
-.marquee { overflow: hidden; border-block: 1px solid var(--line); background: rgba(241,234,223,.035); }
-.marquee div { display: flex; width: max-content; animation: marquee 24s linear infinite; }
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  border-block: 1px solid var(--line);
+  background: rgba(241,234,223,.035);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 100vw;
+  justify-content: space-around;
+}
 .marquee span {
-  padding: 1rem 2rem;
+  padding: 1rem clamp(1.2rem, 3vw, 2.5rem);
   font-family: var(--display);
   text-transform: uppercase;
   letter-spacing: -.04em;
   color: rgba(241,234,223,.86);
   white-space: nowrap;
 }
-@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes marquee { to { transform: translateX(-33.333%); } }
 
 .section { padding: clamp(4rem, 10vw, 9rem) clamp(1rem, 5vw, 5rem); }
 .intro { max-width: 86rem; }
