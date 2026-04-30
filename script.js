@@ -91,7 +91,7 @@ const translations = {
 
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
-  const titleLayers = heroTitle.querySelectorAll('span, em');
+  const titleLayers = heroTitle.querySelectorAll(':scope > span, :scope > em');
   let titleFrame = null;
   let titlePointerEvent = null;
   const updateTitleHoverPosition = (event) => {
