@@ -33,6 +33,7 @@ const translations = {
     pathEditTitle: 'Edit', pathEditText: 'монтаж / звук / цвет', pathDeliverTitle: 'Final', pathDeliverText: 'версии под нужные платформы',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Расскажите, что нужно снять или смонтировать. Я отвечу по формату, срокам и стоимости.',
+    aboutPhotoPlace: 'Монтажная / Германия', aboutPhotoRole: 'Video editor & DOP',
     modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram'
   },
   en: {
@@ -69,6 +70,7 @@ const translations = {
     pathEditTitle: 'Edit', pathEditText: 'cut / sound / color', pathDeliverTitle: 'Final', pathDeliverText: 'versions for your platforms',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Tell me what you need filmed or edited. I will reply with format, timing and price.',
+    aboutPhotoPlace: 'Editing room / Germany', aboutPhotoRole: 'Video editor & DOP',
     modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram'
   },
   de: {
@@ -105,6 +107,7 @@ const translations = {
     pathEditTitle: 'Edit', pathEditText: 'Schnitt / Sound / Color', pathDeliverTitle: 'Final', pathDeliverText: 'Versionen für deine Plattformen',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Sag mir, was gedreht oder geschnitten werden soll. Ich antworte mit Format, Timing und Preis.',
+    aboutPhotoPlace: 'Editing room / Deutschland', aboutPhotoRole: 'Video Editor & DOP',
     modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben'
   }
 };
@@ -161,6 +164,19 @@ const setLanguage = (lang) => {
 
 document.querySelectorAll('[data-lang]').forEach((button) => {
   button.addEventListener('click', () => setLanguage(button.dataset.lang));
+});
+
+const alignHashTarget = () => {
+  if (!window.location.hash) return;
+  const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+  if (target) target.scrollIntoView({ block: 'start' });
+};
+
+window.addEventListener('load', () => {
+  requestAnimationFrame(() => {
+    alignHashTarget();
+    window.setTimeout(alignHashTarget, 420);
+  });
 });
 
 const observer = new IntersectionObserver((entries) => {
