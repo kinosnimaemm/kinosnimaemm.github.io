@@ -32,9 +32,10 @@ const translations = {
     pathBriefTitle: 'Brief', pathBriefText: 'задача / стиль / дедлайн', pathShootTitle: 'Shoot', pathShootText: 'съемка или ваши исходники',
     pathEditTitle: 'Edit', pathEditText: 'монтаж / звук / цвет', pathDeliverTitle: 'Final', pathDeliverText: 'версии под нужные платформы',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
-    contactText: 'Расскажите, что нужно снять или смонтировать. Я отвечу по формату, срокам и стоимости.',
+    contactText: 'Напишите, что нужно снять или смонтировать. Я отвечу по формату, срокам и бюджету.',
     aboutPhotoPlace: 'Монтажная / Германия', aboutPhotoRole: 'Video editor & DOP',
-    modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram'
+    modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram',
+    scrollHint: 'Скролл / свайп →'
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
@@ -69,9 +70,10 @@ const translations = {
     pathBriefTitle: 'Brief', pathBriefText: 'goal / style / deadline', pathShootTitle: 'Shoot', pathShootText: 'shooting or your footage',
     pathEditTitle: 'Edit', pathEditText: 'cut / sound / color', pathDeliverTitle: 'Final', pathDeliverText: 'versions for your platforms',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
-    contactText: 'Tell me what you need filmed or edited. I will reply with format, timing and price.',
+    contactText: 'Tell me what needs to be filmed or edited. I will reply with format, timing and budget.',
     aboutPhotoPlace: 'Editing room / Germany', aboutPhotoRole: 'Video editor & DOP',
-    modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram'
+    modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram',
+    scrollHint: 'Scroll / swipe →'
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
@@ -106,12 +108,92 @@ const translations = {
     pathBriefTitle: 'Brief', pathBriefText: 'Ziel / Stil / Deadline', pathShootTitle: 'Shoot', pathShootText: 'Dreh oder dein Material',
     pathEditTitle: 'Edit', pathEditText: 'Schnitt / Sound / Color', pathDeliverTitle: 'Final', pathDeliverText: 'Versionen für deine Plattformen',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
-    contactText: 'Sag mir, was gedreht oder geschnitten werden soll. Ich antworte mit Format, Timing und Preis.',
+    contactText: 'Schreib mir, was gedreht oder geschnitten werden soll. Ich antworte mit Format, Timing und Budget.',
     aboutPhotoPlace: 'Editing room / Deutschland', aboutPhotoRole: 'Video Editor & DOP',
-    modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben'
+    modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben',
+    scrollHint: 'Scrollen / wischen →'
   }
 };
 
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (hasFinePointer && !prefersReducedMotion.matches && cursorDot && cursorRing) {
+  document.body.classList.add('has-custom-cursor');
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
+  let cursorVisible = false;
+
+  const showCursor = () => {
+    if (!cursorVisible) {
+      cursorVisible = true;
+      cursorDot.style.opacity = '1';
+      cursorRing.style.opacity = '1';
+    }
+  };
+
+  const hideCursor = () => {
+    cursorVisible = false;
+    cursorDot.style.opacity = '0';
+    cursorRing.style.opacity = '0';
+  };
+
+  document.addEventListener('pointermove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    showCursor();
+  });
+
+  document.addEventListener('pointerleave', hideCursor);
+  const hoverTargets = document.querySelectorAll('.clip-card, .button, a, .lang-switch button, .modal-close, .modal-nav, .work-filters button, .journey-grid a');
+
+  hoverTargets.forEach((target) => {
+    target.addEventListener('pointerenter', () => cursorRing.classList.add('is-hover'));
+    target.addEventListener('pointerleave', () => cursorRing.classList.remove('is-hover'));
+  });
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  const updateCursorFrame = () => {
+    ringX = lerp(ringX, mouseX, 0.12);
+    ringY = lerp(ringY, mouseY, 0.12);
+
+    cursorDot.style.transform = `translate(-50%, -50%) translate(${mouseX}px, ${mouseY}px)`;
+    cursorRing.style.transform = `translate(-50%, -50%) translate(${ringX}px, ${ringY}px)`;
+
+    requestAnimationFrame(updateCursorFrame);
+  };
+  requestAnimationFrame(updateCursorFrame);
+}
+
+const lenis = window.Lenis && !prefersReducedMotion.matches
+  ? new window.Lenis({
+      duration: 1.05,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.25,
+      infinite: false,
+      autoRaf: true,
+      anchors: true,
+      allowNestedScroll: true,
+      stopInertiaOnNavigate: true,
+    })
+  : null;
+
+lenis?.on('scroll', () => requestScrollMagic());
+
+prefersReducedMotion.addEventListener('change', (e) => {
+  if (e.matches && lenis) {
+    lenis.destroy();
+  }
+});
 
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
@@ -139,6 +221,35 @@ if (heroTitle) {
   heroTitle.addEventListener('pointermove', updateTitleHoverPosition);
 }
 
+const splitHeroTitleIntoWords = () => {
+  const heroTitleEl = document.querySelector('.hero-title');
+  if (!heroTitleEl) return;
+
+  const layers = heroTitleEl.querySelectorAll('.title-base, .title-accent');
+  layers.forEach((layer) => {
+    const text = layer.textContent.trim();
+    const words = text.split(/\s+/);
+    layer.innerHTML = words.map((word, i) =>
+      `<span class="kinetic-word" data-word-index="${i}"><span class="kinetic-word-inner">${word}</span></span>${i < words.length - 1 ? ' ' : ''}`
+    ).join('');
+  });
+};
+
+splitHeroTitleIntoWords();
+
+const revealHeroTitle = () => {
+  const words = document.querySelectorAll('.hero-title .kinetic-word');
+  words.forEach((word, i) => {
+    setTimeout(() => {
+      word.classList.add('visible');
+    }, 200 + i * 90);
+  });
+};
+
+requestAnimationFrame(() => {
+  setTimeout(revealHeroTitle, 300);
+});
+
 const setLanguage = (lang) => {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach((node) => {
@@ -152,6 +263,12 @@ const setLanguage = (lang) => {
         node.textContent = translations[lang][key];
       }
     }
+  });
+  splitHeroTitleIntoWords();
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.hero-title .kinetic-word').forEach((word) => {
+      word.classList.add('visible');
+    });
   });
   if (heroTitle) {
     heroTitle.setAttribute('aria-label', `${translations[lang].heroTitleA} ${translations[lang].heroTitleB}`);
@@ -169,7 +286,12 @@ document.querySelectorAll('[data-lang]').forEach((button) => {
 const alignHashTarget = () => {
   if (!window.location.hash) return;
   const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-  if (target) target.scrollIntoView({ block: 'start' });
+  if (!target) return;
+  if (lenis) {
+    lenis.scrollTo(target, { offset: 0, duration: 1.05 });
+  } else {
+    target.scrollIntoView({ block: 'start' });
+  }
 };
 
 window.addEventListener('load', () => {
@@ -187,6 +309,22 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
 
+const numberPopObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const spans = entry.target.querySelectorAll('.trust-strip span, .path-steps span, .direction-head > span');
+      spans.forEach((span, i) => {
+        setTimeout(() => span.classList.add('number-pop'), i * 100);
+      });
+      numberPopObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+
+document.querySelectorAll('.trust-strip, .path-steps, .direction-panel').forEach((section) => {
+  numberPopObserver.observe(section);
+});
+
 const prepareVideo = (video) => {
   if (!video || video.dataset.ready === 'true') return;
   video.querySelectorAll('source[data-src]').forEach((source) => {
@@ -201,6 +339,7 @@ const videoModal = document.querySelector('.video-modal');
 const modalVideo = document.querySelector('.modal-video');
 const modalTitle = document.querySelector('.modal-caption h3');
 const modalMeta = document.querySelector('.modal-caption p');
+const modalCaseLite = document.querySelector('.modal-case-lite');
 const modalClose = document.querySelector('.modal-close');
 const modalCount = document.querySelector('.modal-count');
 const modalPrev = document.querySelector('.modal-prev');
@@ -213,6 +352,7 @@ const showreelItem = {
   title: 'Main Showreel',
   role: 'Showreel / shooting / editing / sound',
   format: '50 sec portfolio opener',
+  best: 'quick client scan',
   src: 'assets/video/main-hero-showreel-horizontal.mp4',
   poster: 'assets/posters/hero-full-frame.mp4.jpg'
 };
@@ -224,11 +364,19 @@ const getVideoSource = (video) => {
 
 const itemFromCard = (card) => {
   const cardVideo = card.querySelector('video');
+  const inferredBest = getCardCategories(card).includes('beauty')
+    ? 'beauty master trust'
+    : getCardCategories(card).includes('business')
+      ? 'local business / ads'
+      : getCardCategories(card).includes('tattoo')
+        ? 'artist portfolio'
+        : 'visual hook / campaign mood';
   return {
     card,
     title: card.dataset.title || card.querySelector('span')?.textContent || 'Selected work',
     role: card.dataset.role || '',
     format: card.dataset.format || '',
+    best: card.dataset.best || inferredBest,
     src: getVideoSource(cardVideo),
     poster: cardVideo?.poster || ''
   };
@@ -254,8 +402,31 @@ const setModalNavigationState = (playlist) => {
   modalNext?.toggleAttribute('hidden', !hasMany);
 };
 
-const closeVideoModal = () => {
+const maskOverlay = document.createElement('div');
+maskOverlay.className = 'video-mask-overlay';
+maskOverlay.setAttribute('aria-hidden', 'true');
+document.body.appendChild(maskOverlay);
+
+let lastClickX = window.innerWidth / 2;
+let lastClickY = window.innerHeight / 2;
+
+document.addEventListener('pointerdown', (e) => {
+  lastClickX = e.clientX;
+  lastClickY = e.clientY;
+});
+
+const closeVideoModal = (skipMask) => {
   if (!videoModal || !modalVideo) return;
+
+  if (!skipMask && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    maskOverlay.style.setProperty('--mask-x', `${lastClickX}px`);
+    maskOverlay.style.setProperty('--mask-y', `${lastClickY}px`);
+    maskOverlay.className = 'video-mask-overlay is-collapsing';
+    maskOverlay.addEventListener('animationend', () => {
+      maskOverlay.className = 'video-mask-overlay';
+    }, { once: true });
+  }
+
   modalVideo.pause();
   modalVideo.removeAttribute('src');
   modalVideo.load();
@@ -275,6 +446,17 @@ const openVideoModal = (target, options = {}) => {
   currentVideoIndex = playlistIndex >= 0 ? playlistIndex : 0;
   const activeItem = playlist[currentVideoIndex] || item;
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reducedMotion && options.clickX != null) {
+    maskOverlay.style.setProperty('--mask-x', `${options.clickX}px`);
+    maskOverlay.style.setProperty('--mask-y', `${options.clickY}px`);
+    maskOverlay.className = 'video-mask-overlay is-expanding';
+    maskOverlay.addEventListener('animationend', () => {
+      maskOverlay.className = 'video-mask-overlay';
+    }, { once: true });
+  }
+
   modalVideo.pause();
   modalVideo.muted = false;
   modalVideo.defaultMuted = false;
@@ -283,6 +465,16 @@ const openVideoModal = (target, options = {}) => {
   modalVideo.poster = activeItem.poster || '';
   modalTitle.textContent = activeItem.title;
   modalMeta.textContent = [activeItem.role, activeItem.format].filter(Boolean).join(' / ');
+  if (modalCaseLite) {
+    modalCaseLite.innerHTML = [
+      ['Role', activeItem.role],
+      ['Format', activeItem.format],
+      ['Best for', activeItem.best]
+    ]
+      .filter(([, value]) => value)
+      .map(([label, value]) => `<span><b>${label}</b>${value}</span>`)
+      .join('');
+  }
   if (modalEndCta) modalEndCta.hidden = true;
   setModalNavigationState(playlist);
   document.body.classList.add('modal-open');
@@ -291,7 +483,13 @@ const openVideoModal = (target, options = {}) => {
     modalVideo.controls = true;
   });
 
-  if (options.scrollToWorks) document.querySelector('#works')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (options.scrollToWorks) {
+    if (lenis) {
+      lenis.scrollTo('#works', { offset: 0, duration: 1.05 });
+    } else {
+      document.getElementById('works')?.scrollIntoView({ block: 'start' });
+    }
+  }
 };
 
 const openPlaylistOffset = (offset) => {
@@ -307,7 +505,7 @@ modalNext?.addEventListener('click', () => openPlaylistOffset(1));
 modalVideo?.addEventListener('ended', () => {
   if (modalEndCta) modalEndCta.hidden = false;
 });
-showreelButton?.addEventListener('click', () => openVideoModal(showreelItem));
+showreelButton?.addEventListener('click', (e) => openVideoModal(showreelItem, { clickX: e.clientX, clickY: e.clientY }));
 videoModal?.addEventListener('click', (event) => {
   if (event.target === videoModal) closeVideoModal();
 });
@@ -341,11 +539,12 @@ clipCards.forEach((card) => {
   card.addEventListener('mouseleave', pause);
   card.addEventListener('focusin', play);
   card.addEventListener('focusout', pause);
-  card.addEventListener('click', () => openVideoModal(card));
+  card.addEventListener('click', (e) => openVideoModal(card, { clickX: e.clientX, clickY: e.clientY }));
   card.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      openVideoModal(card);
+      const rect = card.getBoundingClientRect();
+      openVideoModal(card, { clickX: rect.left + rect.width / 2, clickY: rect.top + rect.height / 2 });
     }
   });
 });
@@ -384,6 +583,47 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+const horizontalSection = document.querySelector('.horizontal-scroll-section');
+const selectedWorksContainer = document.querySelector('.selected-works');
+const scrollPrevBtn = document.querySelector('.scroll-nav-prev');
+const scrollNextBtn = document.querySelector('.scroll-nav-next');
+const scrollCounter = document.querySelector('.scroll-counter');
+const scrollProgressFill = document.querySelector('.scroll-progress-fill');
+
+if (horizontalSection && selectedWorksContainer) {
+  const featureCards = selectedWorksContainer.querySelectorAll('.feature-card');
+
+  const updateScrollNav = () => {
+    const scrollLeft = selectedWorksContainer.scrollLeft;
+    const maxScroll = selectedWorksContainer.scrollWidth - selectedWorksContainer.clientWidth;
+    const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+    const currentIndex = Math.round(progress * (featureCards.length - 1)) + 1;
+
+    if (scrollCounter) {
+      scrollCounter.textContent = `${String(currentIndex).padStart(2, '0')} / ${String(featureCards.length).padStart(2, '0')}`;
+    }
+    if (scrollProgressFill) {
+      scrollProgressFill.style.transform = `scaleX(${Math.max(0, Math.min(1, progress + 1 / featureCards.length))})`;
+    }
+  };
+
+  selectedWorksContainer.addEventListener('scroll', updateScrollNav, { passive: true });
+
+  const scrollByCard = (direction) => {
+    const cardWidth = featureCards[0]?.offsetWidth || 400;
+    const gap = parseFloat(getComputedStyle(selectedWorksContainer).gap) || 12;
+    selectedWorksContainer.scrollBy({
+      left: direction * (cardWidth + gap),
+      behavior: 'smooth'
+    });
+  };
+
+  scrollPrevBtn?.addEventListener('click', () => scrollByCard(-1));
+  scrollNextBtn?.addEventListener('click', () => scrollByCard(1));
+
+  updateScrollNav();
+}
 
 const playbackObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -433,11 +673,16 @@ const getSceneLabel = (section) => {
 };
 
 const updateScrollMagic = () => {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollTop = lenis?.scroll || window.scrollY || document.documentElement.scrollTop;
   const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
   const pageProgress = clamp(scrollTop / maxScroll);
   document.documentElement.style.setProperty('--page-progress', pageProgress.toFixed(4));
   if (progressFill) progressFill.style.transform = `scaleX(${pageProgress})`;
+
+  const scrollWordmark = document.querySelector('.scroll-wordmark');
+  if (scrollWordmark) {
+    scrollWordmark.style.transform = `translate3d(calc(${(-pageProgress * 18).toFixed(2)}vw), calc(${(-pageProgress * 6).toFixed(2)}vh), 0)`;
+  }
 
   let activeIndex = 0;
   let activeDistance = Infinity;
@@ -458,6 +703,20 @@ const updateScrollMagic = () => {
     }
   });
 
+  const aboutPortrait = document.querySelector('.about-portrait');
+  if (aboutPortrait) {
+    const rect = aboutPortrait.getBoundingClientRect();
+    const visibility = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height));
+    const parallaxY = (visibility - 0.5) * -40;
+    aboutPortrait.style.transform = `translateY(${parallaxY.toFixed(2)}px)`;
+  }
+
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    const heroOffset = clamp(scrollTop / (window.innerHeight * 0.8));
+    heroVideo.style.transform = `scale(${1 + heroOffset * 0.08}) translateY(${heroOffset * 30}px)`;
+  }
+
   const active = sceneSections[activeIndex];
   if (hudIndex) hudIndex.textContent = String(activeIndex).padStart(2, '0');
   if (hudLabel && active) hudLabel.textContent = getSceneLabel(active);
@@ -471,9 +730,42 @@ const requestScrollMagic = () => {
   }
 };
 
-window.addEventListener('scroll', requestScrollMagic, { passive: true });
 window.addEventListener('resize', requestScrollMagic);
 updateScrollMagic();
+
+// Subtle editorial typography accent. Keep mobile work browsing direct and scannable.
+const initGlitchText = () => {
+  const headings = document.querySelectorAll('h1, h2, .section-kicker, .interlude-copy h3');
+
+  headings.forEach(heading => {
+    if (!heading.dataset.text) {
+      heading.dataset.text = heading.textContent.trim();
+    }
+    heading.classList.add('glitch-text');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger glitch
+        entry.target.classList.add('active');
+
+        // Remove after animation
+        setTimeout(() => {
+          entry.target.classList.remove('active');
+        }, 350);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  headings.forEach(heading => observer.observe(heading));
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initGlitchText();
+});
 
 const detectInitialLanguage = () => {
   const saved = localStorage.getItem('kino-lang');
