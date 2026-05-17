@@ -1479,6 +1479,29 @@ h2::selection { background: var(--accent); color: #130d08; }
 .interlude-triptych.visible .ambient-stack .ambient-video:nth-child(1) { transform: scale(1.02) translateY(-.6rem); }
 .interlude-triptych.visible .ambient-stack .ambient-video:nth-child(2) { transform: scale(1.02) translateY(.9rem); }
 .interlude-triptych.visible .ambient-stack .ambient-video:nth-child(3) { transform: scale(1.02) translateY(-.2rem); }
+.lash-interlude {
+  min-height: clamp(25rem, 58vw, 46rem);
+}
+.lash-interlude .ambient-video {
+  object-position: center;
+  opacity: .82;
+  filter: saturate(1.02) contrast(1.08) brightness(.75);
+  transform: scale(1.045);
+}
+.lash-interlude.visible .ambient-video {
+  opacity: .92;
+  filter: saturate(1.08) contrast(1.12) brightness(.82);
+  transform: scale(1.01);
+}
+.lash-interlude .interlude-overlay {
+  background:
+    radial-gradient(circle at 70% 44%, rgba(255,106,42,.16), transparent 27rem),
+    linear-gradient(90deg, rgba(5,5,4,.9), rgba(5,5,4,.32) 48%, rgba(5,5,4,.88)),
+    linear-gradient(to top, rgba(5,5,4,.9), transparent 44%, rgba(5,5,4,.5));
+}
+.lash-interlude .interlude-copy {
+  max-width: min(52rem, calc(100% - 3rem));
+}
 .thin-interlude {
   min-height: clamp(18rem, 42vw, 34rem);
 }
