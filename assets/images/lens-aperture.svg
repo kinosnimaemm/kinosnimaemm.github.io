@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%" class="cine-lens-svg">
+  <defs>
+    <!-- Glow and styling filters -->
+    <filter id="lens-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <radialGradient id="lens-shading" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#0b0b0a" stop-opacity="0" />
+      <stop offset="95%" stop-color="#ff6a2a" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0b0b0a" stop-opacity="0.6" />
+    </radialGradient>
+    <linearGradient id="blade-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(241, 234, 223, 0.08)" />
+      <stop offset="50%" stop-color="rgba(255, 106, 42, 0.03)" />
+      <stop offset="100%" stop-color="rgba(11, 11, 10, 0.9)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shading overlay -->
+  <circle cx="400" cy="400" r="390" fill="url(#lens-shading)" />
+
+  <!-- Outer mechanical barrel -->
+  <circle cx="400" cy="400" r="380" fill="none" stroke="rgba(241, 234, 223, 0.04)" stroke-width="2" />
+  <circle cx="400" cy="400" r="374" fill="none" stroke="rgba(241, 234, 223, 0.12)" stroke-width="1.5" stroke-dasharray="8 6" />
+
+  <!-- Outer focus scale ticks -->
+  <g class="lens-ticks" stroke="rgba(241, 234, 223, 0.25)" stroke-width="1">
+    <!-- Generated ticks using 15-degree steps -->
+    <line x1="400" y1="20" x2="400" y2="35" />
+    <line x1="590" y1="71" x2="577" y2="84" />
+    <line x1="719" y1="200" x2="706" y2="213" />
+    <line x1="780" y1="400" x2="765" y2="400" />
+    <line x1="719" y1="600" x2="706" y2="587" />
+    <line x1="590" y1="729" x2="577" y2="716" />
+    <line x1="400" y1="780" x2="400" y2="765" />
+    <line x1="210" y1="729" x2="223" y2="716" />
+    <line x1="81" y1="600" x2="94" y2="587" />
+    <line x1="20" y1="400" x2="35" y2="400" />
+    <line x1="81" y1="200" x2="94" y2="213" />
+    <line x1="210" y1="71" x2="223" y2="84" />
+    
+    <!-- Intermediate fine ticks -->
+    <g stroke="rgba(241, 234, 223, 0.08)" stroke-dasharray="2 4">
+      <circle cx="400" cy="400" r="350" fill="none" />
+    </g>
+  </g>
+
+  <!-- Aperture ring numbers (f-stops) -->
+  <g class="lens-labels" font-family="'Unbounded', sans-serif" font-size="11" font-weight="900" fill="rgba(241, 234, 223, 0.4)" text-anchor="middle">
+    <text x="400" y="65">f/1.2</text>
+    <text x="575" y="115">f/1.4</text>
+    <text x="690" y="240">f/2.0</text>
+    <text x="735" y="404">f/2.8</text>
+    <text x="690" y="570">f/4.0</text>
+    <text x="575" y="695">f/5.6</text>
+    <text x="400" y="745">f/8.0</text>
+    <text x="225" y="695">f/11</text>
+    <text x="110" y="570">f/16</text>
+    <text x="65" y="404">f/22</text>
+  </g>
+
+  <!-- Aperture rotating ring -->
+  <circle class="lens-aperture-ring" cx="400" cy="400" r="310" fill="none" stroke="rgba(255, 106, 42, 0.18)" stroke-width="1" />
+  <circle cx="400" cy="400" r="300" fill="none" stroke="rgba(241, 234, 223, 0.05)" stroke-width="8" />
+
+  <!-- Inner technical markings -->
+  <g stroke="rgba(215, 166, 88, 0.3)" stroke-width="1" fill="none" filter="url(#lens-glow)">
+    <!-- Autocollimator reticle crosshair -->
+    <path d="M 400 130 L 400 200 M 400 600 L 400 670 M 130 400 L 200 400 M 600 400 L 670 400" stroke-dasharray="4 4" />
+    <circle cx="400" cy="400" r="230" stroke="rgba(241, 234, 223, 0.06)" />
+    <circle cx="400" cy="400" r="235" stroke="rgba(255, 106, 42, 0.15)" stroke-dasharray="1 15" />
+  </g>
+
+  <!-- ================= LENS APERTURE BLADES (9-BLADE IRIS SYSTEM) ================= -->
+  <!-- Center of rotation is (400, 400) -->
+  <!-- Blades overlap to form a dynamically scaling regular polygon in the center -->
+  <g class="aperture-iris" filter="url(#lens-glow)">
+    
+    <!-- Blade 1 -->
+    <path class="iris-blade" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 2 -->
+    <path class="iris-blade" transform="rotate(40 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 3 -->
+    <path class="iris-blade" transform="rotate(80 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 4 -->
+    <path class="iris-blade" transform="rotate(120 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 5 -->
+    <path class="iris-blade" transform="rotate(160 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 6 -->
+    <path class="iris-blade" transform="rotate(200 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 7 -->
+    <path class="iris-blade" transform="rotate(240 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 8 -->
+    <path class="iris-blade" transform="rotate(280 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+    
+    <!-- Blade 9 -->
+    <path class="iris-blade" transform="rotate(320 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+
+  </g>
+
+  <!-- Inner glass lens elements and reflections -->
+  <circle cx="400" cy="400" r="175" fill="none" stroke="rgba(255, 106, 42, 0.08)" stroke-width="3" />
+  <circle cx="400" cy="400" r="170" fill="none" stroke="rgba(241, 234, 223, 0.05)" stroke-width="1" />
+  
+  <path d="M 280 280 A 170 170 0 0 1 520 280" fill="none" stroke="rgba(241, 234, 223, 0.08)" stroke-width="2" stroke-linecap="round" />
+  <path d="M 310 310 A 130 130 0 0 1 490 310" fill="none" stroke="rgba(255, 106, 42, 0.06)" stroke-width="1.5" />
+
+  <!-- Center digital focal target box -->
+  <rect x="380" y="380" width="40" height="40" fill="none" stroke="rgba(255, 106, 42, 0.4)" stroke-width="1" stroke-dasharray="4 8" />
+  <circle cx="400" cy="400" r="4" fill="var(--accent)" opacity="0.6" />
+
+  <!-- Dynamic optical calibration scale -->
+  <g stroke="rgba(241, 234, 223, 0.3)" stroke-width="1">
+    <line x1="390" y1="230" x2="410" y2="230" />
+    <line x1="395" y1="220" x2="405" y2="220" />
+    <line x1="390" y1="570" x2="410" y2="570" />
+    <line x1="395" y1="580" x2="405" y2="580" />
+  </g>
+</svg>

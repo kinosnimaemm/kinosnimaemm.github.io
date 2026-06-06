@@ -2,13 +2,13 @@ const translations = {
   ru: {
     navWork: 'Работы', navAbout: 'Обо мне', navServices: 'Услуги', navContact: 'Контакт',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'съемка, ритм и cinematic cut.',
-    heroCopy: 'Снимаю и монтирую видео для брендов, мастеров и событий. Ритм, картинка, звук и финальная упаковка под social, рекламу и сайты.',
+    heroCopy: 'Создаю визуальный ритм, который удерживает внимание. Превращаю сырые кадры или съемочный день в кинематографичный контент для брендов, артистов и бизнеса с акцентом на премиальный саунд-дизайн и цвет.',
     quickContact: 'Book / Telegram', heroCtaShowreel: 'Смотреть showreel со звуком', heroCtaWork: 'Работы', heroCtaContact: 'Обсудить проект',
-    introText: 'Я Андрей Гевич, video editor и DOP в Германии с 5+ годами опыта в монтаже, съемке, цвете, motion и AI-визуалах.',
+    introText: 'Я Andrii Hevich. Объединяю режиссуру кадра, физику света и ритм монтажа в единый визуальный язык. 5+ лет создаю коммерческий и художественный контент, который выделяется в ленте.',
     worksTitle: 'Video Editing & Full Production',
-    worksLead: 'Короткая подборка работ: монтаж, съемка, цвет, motion и AI-визуалы. Открывайте видео со звуком.',
-    editingTitle: 'Video Editing', editingText: 'Монтаж готового материала: ритм, звук, цвет, титры, motion и финальные версии под платформы.',
-    productionTitle: 'Full Production', productionText: 'Съемка и монтаж под ключ: идея, кадр, свет, цвет и финальная упаковка для брендов, мастеров и событий.',
+    worksLead: 'Каждый кадр — это срез стиля. Избранные проекты: от динамичного рекламного монтажа и AI-эффектов до атмосферных съемок под ключ. Обязательно смотрите со звуком.',
+    editingTitle: 'Video Editing', editingText: 'Когда материал уже снят, моя задача — заставить его работать на удержание. Создаю темп, собираю историю, накладываю сложный звуковой дизайн (SFX), крашу под кино и упаковываю в готовые форматы.',
+    productionTitle: 'Full Production', productionText: 'Полный цикл от концепции до релиза. Разрабатываю визуальный стиль, ставлю свет, режиссирую кадр, снимаю на профессиональную оптику и довожу до идеала на этапе пост-продакшна.',
     chapterTattoo: 'кожа / процесс / мастер / студия', chapterBeauty: 'детали / чистота / атмосфера', chapterBarber: 'мужской стиль / свет / команда', chapterCommercial: 'реклама / продукт / событие',
     interludeTattooTitle: 'Монтаж — это когда кадры начинают дышать как одна история.', interludeLashTitle: 'Детали, свет и ритм делают услугу визуально чистой.', interludeBarberTitle: 'Свет, зеркало и движение превращают услугу в атмосферу.', interludeReelTitle: 'Не просто портфолио — ощущение продакшна во время скролла.',
     aboutTitle: 'Я соединяю съемку, монтаж и post-production в один понятный процесс.',
@@ -28,25 +28,44 @@ const translations = {
     proofFastTitle: 'Showreel first', proofFastText: 'Сначала уровень. Потом детали.',
     proofCycleTitle: 'Shoot / edit', proofCycleText: 'Кадр, ритм и финальный файл в одном процессе.',
     proofGeoTitle: 'Germany / remote', proofGeoText: 'Съемка в Германии. Монтаж удаленно.',
-    pathTitle: 'Коротко, понятно, по делу.', pathLead: 'Вы присылаете задачу, референсы и дедлайн. Я предлагаю визуальное решение и довожу видео до финальной версии.',
+    pathTitle: 'Процесс без лишнего шума.', pathLead: 'Четкий таймлайн, прозрачные этапы и фокус на результате. От первой идеи до финального релиза.',
     pathBriefTitle: 'Brief', pathBriefText: 'задача / стиль / дедлайн', pathShootTitle: 'Shoot', pathShootText: 'съемка или ваши исходники',
     pathEditTitle: 'Edit', pathEditText: 'монтаж / звук / цвет', pathDeliverTitle: 'Final', pathDeliverText: 'версии под нужные платформы',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Напишите, что нужно снять или смонтировать. Я отвечу по формату, срокам и бюджету.',
     aboutPhotoPlace: 'Монтажная / Германия', aboutPhotoRole: 'Video editor & DOP',
     modalSound: 'Sound on', modalCta: 'Обсудить похожее видео', modalEndTitle: 'Хотите такой уровень для своего бренда?', modalEndLink: 'Написать в Telegram',
-    scrollHint: 'Скролл / свайп →'
+    scrollHint: 'Скролл / свайп →',
+    
+    // New Client Path & Configurator Translations
+    routerKicker: '02 / ВЫБЕРИТЕ НАПРАВЛЕНИЕ',
+    routerTitle: 'Что вам необходимо решить?',
+    routerCardProdTitle: 'Съемка под ключ',
+    routerCardProdText: 'От идеи и сценария до съемки и цвета. Полный цикл продакшна для брендов, мастеров и событий в Германии.',
+    routerCardProdCta: 'Портфолио съемок →',
+    routerCardEditTitle: 'Монтаж готового',
+    routerCardEditText: 'Собираю готовый материал: динамика, саунд-дизайн, цветокоррекция, титры и AI-эффекты. Удаленно по всему миру.',
+    routerCardEditCta: 'Портфолио монтажа →',
+    routerCardBriefTitle: 'Бриф-Конструктор',
+    routerCardBriefText: 'Спланируйте формат ролика и детали за 3 быстрых клика и получите готовое сообщение для обсуждения.',
+    routerCardBriefCta: 'Собрать проект →',
+    configTitle: 'Бриф-Конструктор проекта',
+    configService: 'Услуга:',
+    configFormat: 'Формат:',
+    configAddons: 'Детали:',
+    configResult: 'Ваш запрос:',
+    configSend: 'Отправить в Telegram →'
   },
   en: {
     navWork: 'Works', navAbout: 'About', navServices: 'Services', navContact: 'Contact',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'shooting, rhythm and cinematic cut.',
-    heroCopy: 'I shoot and edit videos for brands, artists and events. Rhythm, image, sound and final delivery for social, ads and websites.',
+    heroCopy: 'Crafting visual rhythm that commands attention. Transforming raw footage or full shoot days into high-end cinematic content for brands, artists, and businesses, powered by premium sound design and color grading.',
     quickContact: 'Book / Telegram', heroCtaShowreel: 'Play showreel with sound', heroCtaWork: 'Works', heroCtaContact: 'Discuss a project',
-    introText: 'I am Andrii Hevich, a video editor and DOP in Germany with 5+ years in editing, shooting, color, motion and AI visuals.',
+    introText: 'I am Andrii Hevich. Fusing camera direction, lighting physics, and editing rhythm into a unified visual language. Over 5 years of crafting commercial and artistic content that cuts through the social noise.',
     worksTitle: 'Video Editing & Full Production',
-    worksLead: 'A short selection of work: editing, shooting, color, motion and AI visuals. Open videos with sound.',
-    editingTitle: 'Video Editing', editingText: 'Editing existing footage: rhythm, sound, color, titles, motion and final exports for platforms.',
-    productionTitle: 'Full Production', productionText: 'Shoot and edit from idea to final file for brands, artists, local businesses and events.',
+    worksLead: 'Every frame is a statement of style. Selected projects: from high-energy commercial edits and AI motion to atmospheric full-scale shoots. Sound is 50% of the experience — watch with audio on.',
+    editingTitle: 'Video Editing', editingText: 'When the footage exists, my job is to make it command retention. I design the pacing, build the narrative, layer rich soundscapes (SFX), color grade for the cinema feel, and deliver optimized edits.',
+    productionTitle: 'Full Production', productionText: 'Complete production from concept to release. I shape the visual direction, design the lighting, direct the frames, shoot on professional cinema glass, and refine to perfection in post-production.',
     chapterTattoo: 'skin / process / artist / studio', chapterBeauty: 'details / clean mood / atmosphere', chapterBarber: 'masculine style / light / team', chapterCommercial: 'ads / product / event',
     interludeTattooTitle: 'Editing is when frames start breathing as one story.', interludeLashTitle: 'Detail, light and rhythm make the service feel clean and premium.', interludeBarberTitle: 'Light, mirror and movement turn a service into atmosphere.', interludeReelTitle: 'Not just a portfolio — a production feeling while you scroll.',
     aboutTitle: 'I connect filming, editing and post-production into one clear process.',
@@ -66,25 +85,44 @@ const translations = {
     proofFastTitle: 'Showreel first', proofFastText: 'Level first. Details after.',
     proofCycleTitle: 'Shoot / edit', proofCycleText: 'Frame, rhythm and final file in one process.',
     proofGeoTitle: 'Germany / remote', proofGeoText: 'Shoots in Germany. Editing remotely.',
-    pathTitle: 'Clear, short, to the point.', pathLead: 'Send the goal, references and deadline. I shape the visual direction and deliver the final video.',
+    pathTitle: 'Zero friction, maximum style.', pathLead: 'A transparent workflow with structured milestones, focused entirely on the screen impact.',
     pathBriefTitle: 'Brief', pathBriefText: 'goal / style / deadline', pathShootTitle: 'Shoot', pathShootText: 'shooting or your footage',
     pathEditTitle: 'Edit', pathEditText: 'cut / sound / color', pathDeliverTitle: 'Final', pathDeliverText: 'versions for your platforms',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Tell me what needs to be filmed or edited. I will reply with format, timing and budget.',
     aboutPhotoPlace: 'Editing room / Germany', aboutPhotoRole: 'Video editor & DOP',
     modalSound: 'Sound on', modalCta: 'Discuss a video like this', modalEndTitle: 'Want this level for your brand?', modalEndLink: 'Message me on Telegram',
-    scrollHint: 'Scroll / swipe →'
+    scrollHint: 'Scroll / swipe →',
+    
+    // New Client Path & Configurator Translations
+    routerKicker: '02 / CHOOSE YOUR ROUTE',
+    routerTitle: 'What do you need to solve?',
+    routerCardProdTitle: 'Full Production',
+    routerCardProdText: 'From script to shoot and color. Full-cycle video production for brands, creators, and events in Germany.',
+    routerCardProdCta: 'Production works →',
+    routerCardEditTitle: 'Video Editing',
+    routerCardEditText: 'Cutting your footage: rhythm, sound design, color grading, titles, and AI effects. Remote worldwide.',
+    routerCardEditCta: 'Editing works →',
+    routerCardBriefTitle: 'Project Builder',
+    routerCardBriefText: 'Configure your video format and details in 3 quick clicks and get a pre-filled request ready to send.',
+    routerCardBriefCta: 'Configure project →',
+    configTitle: 'Interactive Project Builder',
+    configService: 'Service:',
+    configFormat: 'Format:',
+    configAddons: 'Details:',
+    configResult: 'Your request:',
+    configSend: 'Send to Telegram →'
   },
   de: {
     navWork: 'Arbeiten', navAbout: 'Über mich', navServices: 'Leistungen', navContact: 'Kontakt',
     heroTitleA: 'SHOWREEL / EDITING', heroTitleB: 'Dreh, Rhythmus und cinematic cut.',
-    heroCopy: 'Ich drehe und schneide Videos für Brands, Artists und Events. Rhythmus, Bild, Sound und finale Versionen für Social, Ads und Websites.',
+    heroCopy: 'Erschaffe einen visuellen Rhythmus, der die Aufmerksamkeit fesselt. Verwandle Rohmaterial oder Drehtage in hochwertigen filmischen Content für Marken, Artists und Businesses, getrieben von erstklassigem Sounddesign und Color Grading.',
     quickContact: 'Book / Telegram', heroCtaShowreel: 'Showreel mit Sound ansehen', heroCtaWork: 'Arbeiten', heroCtaContact: 'Projekt besprechen',
-    introText: 'Ich bin Andrii Hevich, Video Editor und DOP in Deutschland mit 5+ Jahren Erfahrung in Schnitt, Dreh, Color, Motion und AI Visuals.',
+    introText: 'Ich bin Andrii Hevich. Ich verbinde Kameraführung, Lichtphysik und Schnittrhythmus zu einer einheitlichen visuellen Sprache. Seit über 5 Jahren erstelle ich kommerziellen und künstlerischen Content, der sich aus der Masse abhebt.',
     worksTitle: 'Video Editing & Full Production',
-    worksLead: 'Eine kurze Auswahl: Schnitt, Dreh, Color, Motion und AI Visuals. Videos am besten mit Sound öffnen.',
-    editingTitle: 'Video Editing', editingText: 'Schnitt von vorhandenem Material: Rhythmus, Sound, Color, Titles, Motion und finale Exports.',
-    productionTitle: 'Full Production', productionText: 'Dreh und Schnitt von der Idee bis zur finalen Datei für Brands, Artists, lokale Businesses und Events.',
+    worksLead: 'Jeder Frame ist ein Statement von Stil. Ausgewählte Projekte: von dynamischen Werbeschnitten und AI-Motion bis hin zu atmosphärischen Komplettdrehs. Ton einschalten dringend empfohlen.',
+    editingTitle: 'Video Editing', editingText: 'Wenn das Material existiert, ist es mein Job, dass es die Aufmerksamkeit fesselt. Ich gestalte das Pacing, baue die Erzählung auf, layere reichhaltige Soundscapes (SFX), gradere die Farben für das Kinogefühl und liefere optimierte Schnitte.',
+    productionTitle: 'Full Production', productionText: 'Komplette Produktion vom Konzept bis zum Release. Ich gestalte die visuelle Richtung, plane das Lichtdesign, führe Regie, drehe auf professionellem Kino-Glas und verfeinere alles in der Post-Production bis zur Perfektion.',
     chapterTattoo: 'Haut / Prozess / Artist / Studio', chapterBeauty: 'Details / Clean Mood / Atmosphäre', chapterBarber: 'maskuliner Stil / Licht / Team', chapterCommercial: 'Ads / Produkt / Event',
     interludeTattooTitle: 'Editing ist, wenn Frames als eine Geschichte zu atmen beginnen.', interludeLashTitle: 'Details, Licht und Rhythmus machen den Service sauber und hochwertig.', interludeBarberTitle: 'Licht, Spiegel und Bewegung machen aus Service Atmosphäre.', interludeReelTitle: 'Nicht nur Portfolio — ein Produktionsgefühl beim Scrollen.',
     aboutTitle: 'Ich verbinde Dreh, Schnitt und Post-Produktion zu einem klaren Prozess.',
@@ -104,14 +142,33 @@ const translations = {
     proofFastTitle: 'Showreel first', proofFastText: 'Erst das Level. Dann die Details.',
     proofCycleTitle: 'Shoot / edit', proofCycleText: 'Bild, Rhythmus und finale Datei in einem Prozess.',
     proofGeoTitle: 'Germany / remote', proofGeoText: 'Dreh in Deutschland. Schnitt remote.',
-    pathTitle: 'Klar, kurz, auf den Punkt.', pathLead: 'Schick Ziel, Referenzen und Deadline. Ich entwickle die visuelle Richtung und liefere das finale Video.',
+    pathTitle: 'Kein Reibungsverlust, maximaler Stil.', pathLead: 'Ein transparenter Workflow mit klaren Meilensteinen, voll und ganz auf die Wirkung auf dem Bildschirm fokussiert.',
     pathBriefTitle: 'Brief', pathBriefText: 'Ziel / Stil / Deadline', pathShootTitle: 'Shoot', pathShootText: 'Dreh oder dein Material',
     pathEditTitle: 'Edit', pathEditText: 'Schnitt / Sound / Color', pathDeliverTitle: 'Final', pathDeliverText: 'Versionen für deine Plattformen',
     availabilityA: 'Germany based', availabilityB: 'Remote editing', availabilityC: 'Reels / ads / web',
     contactText: 'Schreib mir, was gedreht oder geschnitten werden soll. Ich antworte mit Format, Timing und Budget.',
     aboutPhotoPlace: 'Editing room / Deutschland', aboutPhotoRole: 'Video Editor & DOP',
     modalSound: 'Sound on', modalCta: 'Ähnliches Video besprechen', modalEndTitle: 'Willst du dieses Level für deine Brand?', modalEndLink: 'Auf Telegram schreiben',
-    scrollHint: 'Scrollen / wischen →'
+    scrollHint: 'Scrollen / wischen →',
+    
+    // New Client Path & Configurator Translations
+    routerKicker: '02 / WÄHLE DEINEN WEG',
+    routerTitle: 'Was möchtest du umsetzen?',
+    routerCardProdTitle: 'Full Production',
+    routerCardProdText: 'Vom Konzept bis zum fertigen Dreh und Farbe. Komplette Videoproduktion für Brands, Artists und Events in Deutschland.',
+    routerCardProdCta: 'Dreh-portfolio →',
+    routerCardEditTitle: 'Video Editing',
+    routerCardEditText: 'Schnitt von vorhandenem Material: Rhythmus, Sounddesign, Color-Grading, Titel und AI-Effekte. Remote weltweit.',
+    routerCardEditCta: 'Schnitt-portfolio →',
+    routerCardBriefTitle: 'Brief-Konstruktor',
+    routerCardBriefText: 'Plane dein Videoformat und die Details in 3 schnellen Klicks und erhalte eine fertige Anfrage.',
+    routerCardBriefCta: 'Projekt konfigurieren →',
+    configTitle: 'Interaktiver Brief-Konstruktor',
+    configService: 'Leistung:',
+    configFormat: 'Format:',
+    configAddons: 'Details:',
+    configResult: 'Deine Anfrage:',
+    configSend: 'An Telegram senden →'
   }
 };
 
@@ -142,10 +199,47 @@ if (hasFinePointer && !prefersReducedMotion.matches && cursorDot && cursorRing) 
     cursorRing.style.opacity = '0';
   };
 
+  const updateCursorState = () => {
+    const isFullscreen = !!(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement
+    );
+    const isModalOpen = document.body.classList.contains('modal-open');
+
+    if (isFullscreen || isModalOpen) {
+      document.body.classList.remove('has-custom-cursor');
+      cursorDot.style.display = 'none';
+      cursorRing.style.display = 'none';
+      hideCursor();
+    } else {
+      document.body.classList.add('has-custom-cursor');
+      cursorDot.style.display = 'block';
+      cursorRing.style.display = 'block';
+    }
+  };
+
+  document.addEventListener('fullscreenchange', updateCursorState);
+  document.addEventListener('webkitfullscreenchange', updateCursorState);
+  document.addEventListener('mozfullscreenchange', updateCursorState);
+  document.addEventListener('MSFullscreenChange', updateCursorState);
+
+  window.updateCursorState = updateCursorState;
+  updateCursorState(); // initial state run
+
   document.addEventListener('pointermove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    showCursor();
+    
+    // Prevent showing the custom cursor when modal or fullscreen is active
+    const isFullscreen = !!(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement
+    );
+    if (!isFullscreen && !document.body.classList.contains('modal-open')) {
+      showCursor();
+    }
   });
 
   document.addEventListener('pointerleave', hideCursor);
@@ -238,12 +332,23 @@ const splitHeroTitleIntoWords = () => {
 splitHeroTitleIntoWords();
 
 const revealHeroTitle = () => {
-  const words = document.querySelectorAll('.hero-title .kinetic-word');
+  const heroTitleEl = document.querySelector('.hero-title');
+  if (!heroTitleEl) return;
+
+  heroTitleEl.classList.remove('reveal-done');
+  
+  const words = heroTitleEl.querySelectorAll('.kinetic-word');
   words.forEach((word, i) => {
+    word.classList.remove('visible');
     setTimeout(() => {
       word.classList.add('visible');
-    }, 200 + i * 90);
+    }, 150 + i * 80);
   });
+
+  if (window.revealDoneTimer) clearTimeout(window.revealDoneTimer);
+  window.revealDoneTimer = setTimeout(() => {
+    heroTitleEl.classList.add('reveal-done');
+  }, 150 + words.length * 80 + 950);
 };
 
 requestAnimationFrame(() => {
@@ -266,9 +371,7 @@ const setLanguage = (lang) => {
   });
   splitHeroTitleIntoWords();
   requestAnimationFrame(() => {
-    document.querySelectorAll('.hero-title .kinetic-word').forEach((word) => {
-      word.classList.add('visible');
-    });
+    revealHeroTitle();
   });
   if (heroTitle) {
     heroTitle.setAttribute('aria-label', `${translations[lang].heroTitleA} ${translations[lang].heroTitleB}`);
@@ -434,6 +537,7 @@ const closeVideoModal = (skipMask) => {
   currentVideoIndex = -1;
   videoModal.close();
   document.body.classList.remove('modal-open');
+  if (window.updateCursorState) window.updateCursorState();
 };
 
 const openVideoModal = (target, options = {}) => {
@@ -478,6 +582,7 @@ const openVideoModal = (target, options = {}) => {
   if (modalEndCta) modalEndCta.hidden = true;
   setModalNavigationState(playlist);
   document.body.classList.add('modal-open');
+  if (window.updateCursorState) window.updateCursorState();
   if (!videoModal.open) videoModal.showModal();
   modalVideo.play().catch(() => {
     modalVideo.controls = true;
@@ -780,3 +885,516 @@ const detectInitialLanguage = () => {
 };
 
 setLanguage(detectInitialLanguage());
+
+/* ==========================================================================
+   CAMERA HUD OVERLAY & DYNAMIC VIEWPORT SCENERY LOGIC
+   ========================================================================== */
+
+// 1. 24fps Timecode Generator
+const initHUDTimecode = () => {
+  const tcElement = document.querySelector('.hud-timecode');
+  if (!tcElement) return;
+
+  let frames = 0;
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+
+  const updateTimecode = () => {
+    frames++;
+    if (frames >= 24) {
+      frames = 0;
+      seconds++;
+      if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+          minutes = 0;
+          hours++;
+          if (hours >= 24) {
+            hours = 0;
+          }
+        }
+      }
+    }
+
+    const pad = (n) => String(n).padStart(2, '0');
+    tcElement.textContent = `TC ${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(frames)}`;
+  };
+
+  // 24fps implies 41.67 milliseconds per tick
+  setInterval(updateTimecode, 41.67);
+};
+
+// 2. Pointer-based Dynamic ISO & Active Exposure Simulation
+const initHUDPointerReaction = () => {
+  const isoElement = document.querySelector('.hud-val-iso');
+  const hudOverlay = document.querySelector('.camera-hud-overlay');
+  if (!isoElement) return;
+
+  const isoStops = [100, 200, 400, 800, 1600, 3200, 6400];
+  let moveTimeout;
+
+  window.addEventListener('pointermove', (e) => {
+    // a. Map pointer X coordinate to standard ISO scale values
+    const progressX = e.clientX / window.innerWidth;
+    const stopIndex = Math.min(
+      isoStops.length - 1,
+      Math.max(0, Math.floor(progressX * isoStops.length))
+    );
+    isoElement.textContent = isoStops[stopIndex];
+
+    // b. Viewfinder HUD overlay dynamic opacity (illuminates on cursor motion, fades at rest)
+    if (hudOverlay) {
+      hudOverlay.classList.add('is-moving');
+      clearTimeout(moveTimeout);
+      moveTimeout = setTimeout(() => {
+        hudOverlay.classList.remove('is-moving');
+      }, 2500);
+    }
+  });
+};
+
+// 3. Dynamic Aperture Blade Scroll Physics & Lens Barrel Rotator
+const updateLensAperturePhysics = (progress) => {
+  const lensAperture = document.querySelector('.cine-lens-svg');
+  if (!lensAperture) return;
+
+  const blades = lensAperture.querySelectorAll('.iris-blade');
+  const rotationRing = lensAperture.querySelector('.lens-aperture-ring');
+
+  const rotValue = progress * 140; // rotate barrel up to 140deg
+  const scaleValue = 0.42 + (1 - progress) * 0.58; // open blades as you scroll up, close as you scroll down
+
+  if (rotationRing) {
+    rotationRing.style.transform = `rotate(${rotValue}deg)`;
+    rotationRing.style.transformOrigin = '400px 400px';
+  }
+
+  blades.forEach((blade, index) => {
+    const baseRot = index * 40;
+    blade.style.transform = `rotate(${baseRot + rotValue * 0.28}deg) scale(${scaleValue})`;
+    blade.style.transformOrigin = '400px 400px';
+  });
+
+  // Dynamic Aperture stop HUD reading based on scroll progress
+  const apertureStops = ['f/1.2', 'f/1.4', 'f/2.0', 'f/2.8', 'f/4.0', 'f/5.6', 'f/8.0'];
+  const stopIndex = Math.min(
+    apertureStops.length - 1,
+    Math.max(0, Math.floor(progress * apertureStops.length))
+  );
+  const avElement = document.querySelector('.hud-val-aperture');
+  if (avElement) avElement.textContent = apertureStops[stopIndex];
+};
+
+// 4. Parallax Shift on Hero SVG Barrel (Enhanced 3D perspective tilt & Glare Reflection)
+const initLensParallaxEffect = () => {
+  const lensContainer = document.querySelector('.hero-lens-container');
+  if (!lensContainer) return;
+
+  const lensGlare = lensContainer.querySelector('.lens-glare');
+
+  window.addEventListener('pointermove', (e) => {
+    const halfWidth = window.innerWidth / 2;
+    const halfHeight = window.innerHeight / 2;
+    const normX = (e.clientX - halfWidth) / halfWidth; // range -1 to 1
+    const normY = (e.clientY - halfHeight) / halfHeight; // range -1 to 1
+
+    // Calculate 3D rotations (max tilt of 16 degrees)
+    const rotateY = normX * 16;  // rotate around Y axis when moving horizontally
+    const rotateX = -normY * 16; // rotate around X axis when moving vertically
+
+    // Calculate standard X/Y 2D offset for minor parallax translate shift
+    const xOffset = normX * 24;
+    const yOffset = normY * 24;
+
+    // Apply smooth 3D perspective transform to the entire lens barrel
+    lensContainer.style.transform = `
+      translate3d(${xOffset.toFixed(1)}px, calc(-50% + ${yOffset.toFixed(1)}px), 0px)
+      perspective(1200px)
+      rotateX(${rotateX.toFixed(1)}deg)
+      rotateY(${rotateY.toFixed(1)}deg)
+      scale(0.92)
+    `;
+
+    // Move the lens reflection glare element in the opposite direction
+    if (lensGlare) {
+      const glareX = -normX * 42;
+      const glareY = -normY * 42;
+      lensGlare.style.transform = `translate3d(${glareX.toFixed(1)}px, ${glareY.toFixed(1)}px, 0px)`;
+    }
+  });
+};
+
+/* ==========================================================================
+   WEB AUDIO API ANALOG CAMERA SOUNDS SYNTHESIZER
+   ========================================================================== */
+
+let audioCtx = null;
+let audioHUDActive = false;
+
+const initAudioHUDContext = () => {
+  if (audioCtx) return;
+  // Initialize context on user click to conform with browser auto-play policies
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  audioCtx = new AudioContext();
+};
+
+const playHUDEffect = (type) => {
+  if (!audioHUDActive) return;
+  initAudioHUDContext();
+  if (!audioCtx || audioCtx.state === 'suspended') {
+    audioCtx?.resume();
+  }
+
+  const now = audioCtx.currentTime;
+
+  switch (type) {
+    case 'focus': // High-end double-tone autofocus beep
+      {
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(880, now); // A5 note
+
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(1320, now + 0.05); // E6 note
+
+        gainNode.gain.setValueAtTime(0.04, now);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+
+        osc1.connect(gainNode);
+        osc2.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc1.start(now);
+        osc1.stop(now + 0.05);
+
+        osc2.start(now + 0.05);
+        osc2.stop(now + 0.16);
+      }
+      break;
+
+    case 'tick': // Muffled lens aperture wheel tick
+      {
+        const osc = audioCtx.createOscillator();
+        const filter = audioCtx.createBiquadFilter();
+        const gainNode = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(80, now + 0.012);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(120, now);
+        filter.Q.setValueAtTime(2.0, now);
+
+        gainNode.gain.setValueAtTime(0.12, now);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.012);
+
+        osc.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.012);
+      }
+      break;
+
+    case 'click': // Camera dial shutter transient
+      {
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1200, now);
+        osc.frequency.exponentialRampToValueAtTime(150, now + 0.02);
+
+        gainNode.gain.setValueAtTime(0.06, now);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.02);
+
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.02);
+      }
+      break;
+
+    case 'shutter': // Complex mechanical camera shutter click
+      {
+        // Synthesize shutter click by blending a frequency-sweeping oscillator and filtered noise
+        const osc = audioCtx.createOscillator();
+        const noiseNode = audioCtx.createBufferSource();
+        const filter = audioCtx.createBiquadFilter();
+        const gainNode = audioCtx.createGain();
+
+        // 1. Frequency sweep oscillator
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(160, now);
+        osc.frequency.exponentialRampToValueAtTime(40, now + 0.08);
+
+        // 2. Noise transient buffer
+        const bufferSize = audioCtx.sampleRate * 0.04; // 40ms of noise
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        noiseNode.buffer = buffer;
+
+        // 3. Bandpass filter for textured noise clicking
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(2200, now);
+        filter.Q.setValueAtTime(1.8, now);
+
+        gainNode.gain.setValueAtTime(0.08, now);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+
+        osc.connect(gainNode);
+        noiseNode.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.08);
+        noiseNode.start(now);
+        noiseNode.stop(now + 0.08);
+      }
+      break;
+  }
+};
+
+// Hook audio UI sound toggler
+const initAudioHUDControls = () => {
+  const toggleBtn = document.querySelector('.sound-hud-toggle');
+  if (!toggleBtn) return;
+
+  const soundMutedIcon = toggleBtn.querySelector('.sound-icon-muted');
+  const soundUnmutedIcon = toggleBtn.querySelector('.sound-icon-unmuted');
+
+  const updateIcons = () => {
+    if (audioHUDActive) {
+      toggleBtn.classList.add('is-active');
+      soundMutedIcon.hidden = true;
+      if (soundUnmutedIcon) soundUnmutedIcon.hidden = false;
+    } else {
+      toggleBtn.classList.remove('is-active');
+      soundMutedIcon.hidden = false;
+      if (soundUnmutedIcon) soundUnmutedIcon.hidden = true;
+    }
+  };
+
+  toggleBtn.addEventListener('click', () => {
+    audioHUDActive = !audioHUDActive;
+    updateIcons();
+    if (audioHUDActive) {
+      initAudioHUDContext();
+      playHUDEffect('focus');
+    }
+  });
+
+  // Attach sound triggers on common UI interactions
+  const triggerTick = () => playHUDEffect('tick');
+  const triggerClick = () => playHUDEffect('click');
+
+  document.querySelectorAll('.lang-switch button, .work-filters button').forEach((btn) => {
+    btn.addEventListener('click', triggerClick);
+    btn.addEventListener('pointerenter', triggerTick);
+  });
+
+  document.querySelectorAll('.site-header .brand, .site-header .nav a').forEach((link) => {
+    link.addEventListener('click', triggerClick);
+    link.addEventListener('pointerenter', triggerTick);
+  });
+
+  // Capture slide change ticks in slider
+  if (selectedWorksContainer) {
+    let lastScrollLeft = selectedWorksContainer.scrollLeft;
+    selectedWorksContainer.addEventListener('scroll', () => {
+      const currentScroll = selectedWorksContainer.scrollLeft;
+      const diff = Math.abs(currentScroll - lastScrollLeft);
+      if (diff > 180) { // Tick sound for slider advances
+        playHUDEffect('tick');
+        lastScrollLeft = currentScroll;
+      }
+    }, { passive: true });
+  }
+
+  // Hook Shutter click when video modal triggers
+  if (showreelButton) {
+    showreelButton.addEventListener('click', () => playHUDEffect('shutter'));
+  }
+};
+
+/* ==========================================================================
+   AUTOFOCUS RETICLE CUSTOM CURSOR HOVER TRIGGERS
+   ========================================================================== */
+
+const initCustomCursorSnapping = () => {
+  if (!cursorRing) return;
+
+  const clips = document.querySelectorAll('.clip-card');
+  clips.forEach((card) => {
+    card.addEventListener('pointerenter', () => {
+      cursorRing.classList.add('is-card-hover');
+      playHUDEffect('focus');
+    });
+    card.addEventListener('pointerleave', () => {
+      cursorRing.classList.remove('is-card-hover');
+    });
+  });
+
+  const buttons = document.querySelectorAll('.button, a, .sound-hud-toggle');
+  buttons.forEach((btn) => {
+    btn.addEventListener('pointerenter', () => {
+      playHUDEffect('tick');
+    });
+  });
+};
+
+/* ==========================================================================
+   INTERACTIVE PROJECT CONFIGURATOR (БРИФ-КОНСТРУКТОР)
+   ========================================================================== */
+
+const initBriefConfigurator = () => {
+  const configurator = document.querySelector('.brief-configurator');
+  if (!configurator) return;
+
+  const serviceButtons = configurator.querySelectorAll('[data-config-type="service"] .config-btn');
+  const formatButtons = configurator.querySelectorAll('[data-config-type="format"] .config-btn');
+  const addonButtons = configurator.querySelectorAll('[data-config-type="addons"] .config-btn');
+  const previewText = configurator.querySelector('.preview-text');
+  const submitBtn = configurator.querySelector('.config-submit-btn');
+
+  const getActiveLang = () => document.documentElement.lang || 'ru';
+
+  const updatePreview = () => {
+    const activeServiceBtn = configurator.querySelector('[data-config-type="service"] .config-btn.active');
+    const activeFormatBtn = configurator.querySelector('[data-config-type="format"] .config-btn.active');
+    const activeAddonBtns = configurator.querySelectorAll('[data-config-type="addons"] .config-btn.active');
+
+    const lang = getActiveLang();
+
+    // Map localized values dynamically
+    const serviceVal = activeServiceBtn
+      ? (lang === 'en' ? activeServiceBtn.dataset.valueEn : lang === 'de' ? activeServiceBtn.dataset.valueDe : activeServiceBtn.dataset.value)
+      : '';
+    const formatVal = activeFormatBtn
+      ? (lang === 'en' ? activeFormatBtn.dataset.valueEn : lang === 'de' ? activeFormatBtn.dataset.valueDe : activeFormatBtn.dataset.value)
+      : '';
+
+    const addonsList = [...activeAddonBtns].map((btn) =>
+      lang === 'en' ? btn.dataset.valueEn : lang === 'de' ? btn.dataset.valueDe : btn.dataset.value
+    );
+
+    let compiledMsg = '';
+    let urlMsg = '';
+
+    if (lang === 'ru') {
+      const addonsStr = addonsList.length ? ` с деталями: ${addonsList.join(', ')}` : '';
+      compiledMsg = `Привет, Андрей! Интересует ${serviceVal} в формате ${formatVal}${addonsStr}. Давай обсудим!`;
+    } else if (lang === 'de') {
+      const addonsStr = addonsList.length ? ` mit folgenden Details: ${addonsList.join(', ')}` : '';
+      compiledMsg = `Hallo Andrii! Ich interessiere mich für ${serviceVal} im Format ${formatVal}${addonsStr}. Lass uns das besprechen!`;
+    } else { // EN default
+      const addonsStr = addonsList.length ? ` with following details: ${addonsList.join(', ')}` : '';
+      compiledMsg = `Hi Andrii! I'm interested in ${serviceVal} in ${formatVal} format${addonsStr}. Let's discuss!`;
+    }
+
+    if (previewText) {
+      previewText.textContent = compiledMsg;
+    }
+
+    if (submitBtn) {
+      submitBtn.href = `https://t.me/youmee_to?text=${encodeURIComponent(compiledMsg)}`;
+    }
+  };
+
+  // Toggle handlers
+  const handleSingleSelect = (buttons) => {
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        playHUDEffect('focus');
+        updatePreview();
+      });
+    });
+  };
+
+  const handleMultiSelect = (buttons) => {
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        playHUDEffect('focus');
+        updatePreview();
+      });
+    });
+  };
+
+  handleSingleSelect(serviceButtons);
+  handleSingleSelect(formatButtons);
+  handleMultiSelect(addonButtons);
+
+  // Hook global language switch to configurator update
+  document.querySelectorAll('[data-lang]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      setTimeout(updatePreview, 50); // allow language selector to update DOM first
+    });
+  });
+
+  updatePreview();
+};
+
+/* ==========================================================================
+   INITIALIZATION CORE
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHUDTimecode();
+  initHUDPointerReaction();
+  initLensParallaxEffect();
+  initAudioHUDControls();
+  initCustomCursorSnapping();
+  initBriefConfigurator();
+
+  // Extend scene parameter calculations inside scroll loops
+  const originalUpdateScrollMagic = updateScrollMagic;
+  updateScrollMagic = () => {
+    originalUpdateScrollMagic();
+    
+    // Smooth Lens updates based on current scroll offset
+    const scrollTop = lenis?.scroll || window.scrollY || document.documentElement.scrollTop;
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = scrollTop / maxScroll;
+    
+    updateLensAperturePhysics(progress);
+    
+    // Focal Length Scroll Mapping
+    const active = sceneSections[activeIndex];
+    let activeLens = '24mm';
+    if (active) {
+      if (active.classList.contains('hero') || active.classList.contains('client-router')) {
+        activeLens = '24mm';
+      } else if (active.id === 'works' || active.id === 'editing-work') {
+        activeLens = '35mm';
+      } else if (active.id === 'production-work' || active.classList.contains('cinema-interlude')) {
+        activeLens = '50mm';
+      } else if (active.id === 'about') {
+        activeLens = '85mm';
+      } else if (active.id === 'contact') {
+        activeLens = '135mm';
+      }
+    }
+    const hudValLens = document.querySelector('.hud-val-lens');
+    if (hudValLens) {
+      hudValLens.textContent = activeLens;
+    }
+  };
+  
+  // Re-run scroll magic logic after setup
+  updateScrollMagic();
+});

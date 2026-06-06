@@ -29,10 +29,54 @@
   </head>
   <body>
     <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true">
+      <span class="cursor-bracket tl"></span>
+      <span class="cursor-bracket tr"></span>
+      <span class="cursor-bracket bl"></span>
+      <span class="cursor-bracket br"></span>
+      <span class="cursor-rec-text">REC</span>
+    </div>
     <div class="grain" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <div class="film-hud" aria-hidden="true">
+    
+    <!-- Cinematic Viewfinder HUD Overlay -->
+    <div class="camera-hud-overlay notranslate" aria-hidden="true">
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner bl"></div>
+      <div class="hud-corner br"></div>
+      <div class="hud-grid-lines">
+        <div class="grid-line h1"></div>
+        <div class="grid-line h2"></div>
+        <div class="grid-line v1"></div>
+        <div class="grid-line v2"></div>
+      </div>
+      <div class="hud-top-bar">
+        <div class="hud-rec"><span class="rec-dot"></span><span>REC</span></div>
+        <div class="hud-timecode">TC 00:00:00:00</div>
+      </div>
+      <div class="hud-bottom-bar">
+        <div class="hud-param-block">
+          <span>LEN</span><span class="hud-val-lens">24mm</span>
+        </div>
+        <div class="hud-param-block">
+          <span>ISO</span><span class="hud-val-iso">100</span>
+        </div>
+        <div class="hud-param-block">
+          <span>AV</span><span class="hud-val-aperture">f/1.8</span>
+        </div>
+        <div class="hud-param-block">
+          <span>TV</span><span>180°</span>
+        </div>
+        <div class="hud-battery">
+          <span>BAT</span>
+          <div class="hud-bat-meter"><div class="hud-bat-level"></div></div>
+          <span>98%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-hud notranslate" aria-hidden="true">
       <span class="hud-index">00</span>
       <span class="hud-label">opening frame</span>
     </div>
@@ -48,10 +92,17 @@
         <a href="#about" data-i18n="navAbout">Обо мне</a>
         <a href="#contact" data-i18n="navContact">Контакт</a>
       </nav>
-      <div class="lang-switch" aria-label="Language switcher">
-        <button class="active" type="button" data-lang="ru">RU</button>
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="de">DE</button>
+      <div class="header-controls">
+        <button class="sound-hud-toggle" type="button" aria-label="Toggle camera sounds">
+          <span class="sound-icon-muted">🔇</span>
+          <span class="sound-icon-unmuted" hidden>🔊</span>
+          <span class="sound-hud-text">SOUND HUD</span>
+        </button>
+        <div class="lang-switch notranslate" aria-label="Language switcher">
+          <button class="active" type="button" data-lang="ru">RU</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="de">DE</button>
+        </div>
       </div>
     </header>
 
@@ -60,6 +111,118 @@
         <video class="hero-video" autoplay muted loop playsinline poster="assets/posters/hero-full-frame.mp4.jpg">
           <source src="assets/video/hero-full-frame.mp4" type="video/mp4" />
         </video>
+        <!-- High-tech Lens Aperture Background element -->
+        <div class="hero-lens-container" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="cine-lens-svg">
+            <defs>
+              <filter id="lens-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <radialGradient id="lens-shading" cx="50%" cy="50%" r="50%">
+                <stop offset="70%" stop-color="#0b0b0a" stop-opacity="0" />
+                <stop offset="95%" stop-color="#ff6a2a" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#0b0b0a" stop-opacity="0.6" />
+              </radialGradient>
+              <linearGradient id="blade-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="rgba(241, 234, 223, 0.08)" />
+                <stop offset="50%" stop-color="rgba(255, 106, 42, 0.03)" />
+                <stop offset="100%" stop-color="rgba(11, 11, 10, 0.9)" />
+              </linearGradient>
+              <linearGradient id="glare-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff6a2a" stop-opacity="0.55" />
+                <stop offset="35%" stop-color="#f1eadf" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="#ff6a2a" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Shading overlay -->
+            <circle cx="400" cy="400" r="390" fill="url(#lens-shading)" />
+
+            <!-- Outer mechanical barrel -->
+            <circle cx="400" cy="400" r="380" fill="none" stroke="rgba(241, 234, 223, 0.04)" stroke-width="2" />
+            <circle cx="400" cy="400" r="374" fill="none" stroke="rgba(241, 234, 223, 0.12)" stroke-width="1.5" stroke-dasharray="8 6" />
+
+            <!-- Outer focus scale ticks -->
+            <g class="lens-ticks" stroke="rgba(241, 234, 223, 0.25)" stroke-width="1">
+              <line x1="400" y1="20" x2="400" y2="35" />
+              <line x1="590" y1="71" x2="577" y2="84" />
+              <line x1="719" y1="200" x2="706" y2="213" />
+              <line x1="780" y1="400" x2="765" y2="400" />
+              <line x1="719" y1="600" x2="706" y2="587" />
+              <line x1="590" y1="729" x2="577" y2="716" />
+              <line x1="400" y1="780" x2="400" y2="765" />
+              <line x1="210" y1="729" x2="223" y2="716" />
+              <line x1="81" y1="600" x2="94" y2="587" />
+              <line x1="20" y1="400" x2="35" y2="400" />
+              <line x1="81" y1="200" x2="94" y2="213" />
+              <line x1="210" y1="71" x2="223" y2="84" />
+              
+              <g stroke="rgba(241, 234, 223, 0.08)" stroke-dasharray="2 4">
+                <circle cx="400" cy="400" r="350" fill="none" />
+              </g>
+            </g>
+
+            <!-- Aperture ring numbers (f-stops) -->
+            <g class="lens-labels" font-family="'Unbounded', sans-serif" font-size="11" font-weight="900" fill="rgba(241, 234, 223, 0.4)" text-anchor="middle">
+              <text x="400" y="65">f/1.2</text>
+              <text x="575" y="115">f/1.4</text>
+              <text x="690" y="240">f/2.0</text>
+              <text x="735" y="404">f/2.8</text>
+              <text x="690" y="570">f/4.0</text>
+              <text x="575" y="695">f/5.6</text>
+              <text x="400" y="745">f/8.0</text>
+              <text x="225" y="695">f/11</text>
+              <text x="110" y="570">f/16</text>
+              <text x="65" y="404">f/22</text>
+            </g>
+
+            <!-- Aperture rotating ring -->
+            <circle class="lens-aperture-ring" cx="400" cy="400" r="310" fill="none" stroke="rgba(255, 106, 42, 0.18)" stroke-width="1" />
+            <circle cx="400" cy="400" r="300" fill="none" stroke="rgba(241, 234, 223, 0.05)" stroke-width="8" />
+
+            <!-- Inner technical markings -->
+            <g stroke="rgba(215, 166, 88, 0.3)" stroke-width="1" fill="none" filter="url(#lens-glow)">
+              <path d="M 400 130 L 400 200 M 400 600 L 400 670 M 130 400 L 200 400 M 600 400 L 670 400" stroke-dasharray="4 4" />
+              <circle cx="400" cy="400" r="230" stroke="rgba(241, 234, 223, 0.06)" />
+              <circle cx="400" cy="400" r="235" stroke="rgba(255, 106, 42, 0.15)" stroke-dasharray="1 15" />
+            </g>
+
+            <!-- 9-blade iris system -->
+            <g class="aperture-iris" filter="url(#lens-glow)">
+              <path class="iris-blade" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(40 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(80 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(120 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(160 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(200 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(240 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(280 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+              <path class="iris-blade" transform="rotate(320 400 400)" d="M 400 180 C 490 180, 560 260, 580 340 L 400 310 Z" fill="url(#blade-gradient)" stroke="rgba(241, 234, 223, 0.18)" stroke-width="1.5" />
+            </g>
+
+            <!-- Inner glass lens elements and reflections -->
+            <circle cx="400" cy="400" r="175" fill="none" stroke="rgba(255, 106, 42, 0.08)" stroke-width="3" />
+            <circle cx="400" cy="400" r="170" fill="none" stroke="rgba(241, 234, 223, 0.05)" stroke-width="1" />
+            
+            <path d="M 280 280 A 170 170 0 0 1 520 280" fill="none" stroke="rgba(241, 234, 223, 0.08)" stroke-width="2" stroke-linecap="round" />
+            <path d="M 310 310 A 130 130 0 0 1 490 310" fill="none" stroke="rgba(255, 106, 42, 0.06)" stroke-width="1.5" />
+
+            <!-- Interactive 3D glass reflection glare -->
+            <path class="lens-glare" d="M 230 230 A 240 240 0 0 1 570 230" fill="none" stroke="url(#glare-gradient)" stroke-width="26" stroke-linecap="round" opacity="0.36" filter="url(#lens-glow)" style="will-change: transform; transition: transform 0.12s ease-out; transform-origin: 400px 400px;" />
+
+            <!-- Center focal target box -->
+            <rect x="380" y="380" width="40" height="40" fill="none" stroke="rgba(255, 106, 42, 0.4)" stroke-width="1" stroke-dasharray="4 8" />
+            <circle cx="400" cy="400" r="4" fill="var(--accent)" opacity="0.6" />
+
+            <g stroke="rgba(241, 234, 223, 0.3)" stroke-width="1">
+              <line x1="390" y1="230" x2="410" y2="230" />
+              <line x1="395" y1="220" x2="405" y2="220" />
+              <line x1="390" y1="570" x2="410" y2="570" />
+              <line x1="395" y1="580" x2="405" y2="580" />
+            </g>
+          </svg>
+        </div>
         <div class="hero-shade"></div>
         <div class="hero-frame" aria-hidden="true"></div>
         <div class="hero-content reveal gyro-parallax">
@@ -335,12 +498,58 @@
 
       <section class="contact" id="contact">
         <div class="contact-inner reveal">
-          <p class="section-kicker">Contact / social links</p>
-          <h2 data-i18n="contactTitle">Если визуал откликается — напишите мне напрямую.</h2>
-          <p data-i18n="contactText">Напишите, что нужно снять или смонтировать. Я отвечу по формату, срокам и бюджету.</p>
-          <div class="contact-links clean-contact">
-            <a class="contact-main" href="https://t.me/youmee_to" target="_blank" rel="noopener">Telegram / @youmee_to</a>
-            <a href="mailto:kinosnimaemm@gmail.com">kinosnimaemm@gmail.com</a>
+          <div class="contact-grid">
+            <div class="contact-left">
+              <p class="section-kicker">Contact / social links</p>
+              <h2 data-i18n="contactTitle">Если визуал откликается — напишите мне напрямую.</h2>
+              <p data-i18n="contactText">Напишите, что нужно снять или смонтировать. Я отвечу по формату, срокам и бюджету.</p>
+              <div class="contact-links clean-contact">
+                <a class="contact-main" href="https://t.me/youmee_to" target="_blank" rel="noopener">Telegram / @youmee_to</a>
+                <a href="mailto:kinosnimaemm@gmail.com">kinosnimaemm@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-right" id="configurator-anchor">
+              <div class="brief-configurator">
+                <h3 data-i18n="configTitle">Бриф-Конструктор проекта</h3>
+                
+                <div class="config-group">
+                  <span class="config-label" data-i18n="configService">Услуга:</span>
+                  <div class="config-options" data-config-type="service">
+                    <button class="config-btn active" type="button" data-value="съемку под ключ" data-value-en="full production" data-value-de="Full Production">Съемка под ключ</button>
+                    <button class="config-btn" type="button" data-value="монтаж готового" data-value-en="video editing" data-value-de="Video Editing">Монтаж</button>
+                    <button class="config-btn" type="button" data-value="AI и Motion" data-value-en="AI & Motion visuals" data-value-de="AI & Motion">AI & Motion</button>
+                  </div>
+                </div>
+                
+                <div class="config-group">
+                  <span class="config-label" data-i18n="configFormat">Формат:</span>
+                  <div class="config-options" data-config-type="format">
+                    <button class="config-btn active" type="button" data-value="Reels / Shorts" data-value-en="Reels / Shorts" data-value-de="Reels / Shorts">Reels / Shorts</button>
+                    <button class="config-btn" type="button" data-value="Рекламный ролик" data-value-en="Commercial Ad" data-value-de="Commercial Ad">Реклама</button>
+                    <button class="config-btn" type="button" data-value="YouTube / Блог" data-value-en="YouTube / Blog" data-value-de="YouTube / Blog">YouTube</button>
+                    <button class="config-btn" type="button" data-value="Событие / Event" data-value-en="Event Aftermovie" data-value-de="Event Aftermovie">Event</button>
+                  </div>
+                </div>
+                
+                <div class="config-group">
+                  <span class="config-label" data-i18n="configAddons">Детали:</span>
+                  <div class="config-options" data-config-type="addons">
+                    <button class="config-btn active" type="button" data-value="Саунд-дизайн" data-value-en="Sound Design" data-value-de="Sound Design">Саунд-дизайн</button>
+                    <button class="config-btn active" type="button" data-value="Цветокоррекция" data-value-en="Color Grading" data-value-de="Color Grading">Цветокор</button>
+                    <button class="config-btn" type="button" data-value="AI эффекты" data-value-en="AI visuals" data-value-de="AI Visuals">AI эффекты</button>
+                    <button class="config-btn" type="button" data-value="Motion-графика" data-value-en="Motion graphics" data-value-de="Motion Graphics">Motion</button>
+                  </div>
+                </div>
+                
+                <div class="config-preview">
+                  <span data-i18n="configResult">Ваш запрос:</span>
+                  <p class="preview-text">Привет, Андрей! Интересует съемку под ключ в формате Reels / Shorts с деталями: Саунд-дизайн, Цветокоррекция. Давай обсудим!</p>
+                </div>
+                
+                <a class="button primary config-submit-btn" href="#" target="_blank" rel="noopener" data-i18n="configSend">Отправить в Telegram →</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
